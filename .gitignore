@@ -127,3 +127,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+*.cfg
+*.ps1
+*.exe
+*.bat
+Python/Scripts/activate
