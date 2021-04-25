@@ -29,9 +29,9 @@ pyo.plot(fig, filename='VacPer100barchart.html')
 # --------------------------------
 # STACKED BAR CHART Most Tourism
 # --------------------------------
-
+tlist = ['FRA','ESP','USA']
 # Filtering data
-dataMostTourism = data2[data2['ISO3'] == ('FRA', 'ESP', 'USA')]
+dataMostTourism = data2[data2['ISO3'] == 'FRA' + data2['ISO3'] == 'ESP' + data2['ISO3'] == 'USA']
 dataMostTourism = dataMostTourism.apply(lambda x: x.str.strip() if x.dtype == "object" else x)  # Removing empty spaces
 # Preparing data and layout
 
