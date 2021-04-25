@@ -1,0 +1,8 @@
+/* CSS Document */
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;800&display=swap');
+.homepageTitle {
+	text-align: center;
+	padding-top: 1%;
+	font-family: 'Inconsolata', monospace;
+	font-weight: 800;
+}
