@@ -14,41 +14,52 @@ data2 = pd.read_csv('../Datasets/vaccination-data.csv')
 # BAR CHART Most Vaccinated Countries
 # --------------------------------
 
-# Filtering data
+# --- Filtering data ---
 dataVacPerCap = data2.sort_values(by=['TOTAL_VACCINATIONS_PER100'], ascending=[False]).head(10)
 dataVacPerCap = dataVacPerCap.apply(lambda x: x.str.strip() if x.dtype == "object" else x)  # Removing empty spaces
 
-# Preparing data and layout
+# --- Preparing data and layout ---
 dataPer100 = [go.Bar(x=dataVacPerCap['COUNTRY'], y=dataVacPerCap['TOTAL_VACCINATIONS_PER100'] / 100)]
 layoutPer100 = go.Layout(title="Most Vaccinated Counties", title_font_size=22, xaxis_title="Country",
                          yaxis_title="Percentage Vaccinated")
-# Plot the figure and saving in a html file
+# --- Plot the figure and saving in a html file ---
 fig = go.Figure(data=dataPer100, layout=layoutPer100)
-pyo.plot(fig, filename='VacPer100barchart.html')
+# pyo.plot(fig, filename='VacPer100barchart.html') ---UNCOMENT WHEN DONE
 
 # --------------------------------
 # STACKED BAR CHART Most Tourism
 # --------------------------------
-tlist = ['FRA','ESP','USA']
-# Filtering data
-dataMostTourism = data2[data2['ISO3'] == 'FRA' + data2['ISO3'] == 'ESP' + data2['ISO3'] == 'USA']
+
+# --- Filtering data ---
+country_code = ['ESP', 'USA', 'CHN', 'ITA', 'TUR', 'MEX', 'DEU', 'THA', 'GBR']
+country_pop = [47, 328, 1398, 60, 82, 127, 83, 70, 67]
+
+dataMostTourism = (data2[data2['ISO3'] == 'FRA'])
+
+for x in country_code:
+    dataMostTourism = dataMostTourism.append(data2[data2['ISO3'] == x])
 dataMostTourism = dataMostTourism.apply(lambda x: x.str.strip() if x.dtype == "object" else x)  # Removing empty spaces
-# Preparing data and layout
 
-# Plot the figure and saving in a html file
+dataMostTourism = dataMostTourism.sort_values(by=['TOTAL_VACCINATIONS'], ascending=False)  # Sort by total vaccinations
+dataMostTourism['FullVax'] = dataMostTourism['TOTAL_VACCINATIONS'] - dataMostTourism['PERSONS_VACCINATED_1PLUS_DOSE']
+trace1_tourism = go.Bar()
+trace2_tourism = go.Bar()
 
-
-# --------------------------------
-# STACKED BAR CHART Most Tourism
-# --------------------------------
-
-# Filtering data
-
-# Preparing data and layout
-dataFin = [go.Bar(x=dataMostTourism['COUNTRY'], y=dataMostTourism['TOTAL_VACCINATIONS_PER100'] / 100)]
+# --- Preparing data and layout ---
+dataFin = [go.Bar(x=dataMostTourism['COUNTRY'], y=dataMostTourism['TOTAL_VACCINATIONS'] / 100)]
 layout1 = go.Layout(title="Most Vaccinated Counties", title_font_size=22, xaxis_title="Country",
-                         yaxis_title="Percentage Vaccinated")
+                    yaxis_title="Percentage Vaccinated")
 
-# Plot the figure and saving in a html file
+# --- Plot the figure and saving in a html file ---
 fig = go.Figure(data=dataFin, layout=layout1)
 pyo.plot(fig, filename='barchart.html')
+
+# --------------------------------
+# STACKED BAR CHART Most Tourism
+# --------------------------------
+
+# --- Filtering data ---
+
+# --- Preparing data and layout ---
+
+# --- Plot the figure and saving in a html file ---
