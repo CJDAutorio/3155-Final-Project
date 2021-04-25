@@ -27,30 +27,37 @@
 }
 .homepageButtonText {
 	text-align: center;
-	margin-top: 8px;
+	margin-top: 80px;
 	font-size: 3em;
 	letter-spacing: 4px;
 	font-family: 'Inconsolata', monospace;
 	font-weight: 400;
 	padding: 5px;
 }
-a:link {
+@keyframes buttonAnimation {
+	from {background-color: #00d4ff; border-radius: 12px; color: #000000;}
+	to {background-color: #6e68d2; border-radius: 18px; color: #FFFFFF;}
+}
+.homepageButton a:link {
+	background-color: #00d4ff;
+	border-radius: 12px;
+	text-decoration: none;
+	color: #000000;
+}
+.homepageButton a:visited {
 	background-color: #00d4ff;
 	border-radius: 12px;
 	text-decoration: none;
 	color: black;
 }
-a:visited {
-	background-color: #00d4ff;
-	border-radius: 12px;
-	text-decoration: none;
-	color: black;
-}
-a:hover {
+.homepageButton a:hover {
 	color: #FFFFFF;
 	border-radius: 18px;
 	text-decoration: none;
 	background-color: #6e68d2;
+	animation-name: buttonAnimation;
+	animation-timing-function: ease;
+	animation-duration: 0.15s;
 }
 .homepageAuthors {
 	position: fixed;
