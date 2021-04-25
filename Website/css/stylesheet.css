@@ -1,4 +1,3 @@
-/* CSS Document */
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;800&display=swap');
 .titleDiv {
 	margin: auto;
@@ -20,10 +19,13 @@
 	font-weight: 400;
 }
 .homepageButton {
-	background: #00d4ff;
+	background-color: #54B5EB;
 	border-radius: 12px;
 	margin-left: 35%;
 	width: 30%;
+	-webkit-animation-name: buttonAnimationOut;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation-duration: 0.15s;
 }
 .homepageButtonText {
 	text-align: center;
@@ -34,30 +36,46 @@
 	font-weight: 400;
 	padding: 5px;
 }
-@keyframes buttonAnimation {
-	from {background-color: #00d4ff; border-radius: 12px; color: #000000;}
-	to {background-color: #6e68d2; border-radius: 18px; color: #FFFFFF;}
+@-webkit-keyframes buttonAnimationIn {
+	from {background-color: #54B5EB; border-radius: 12px; color: #54B5EB;}
+	to {background-color: #6e68d2; border-radius: 48px; color: #FFFFFF;}
+}
+@-webkit-keyframes buttonAnimationOut {
+	from {background-color: #6e68d2; border-radius: 48px; color: #FFFFFF;}
+	to {background-color: #54B5EB; border-radius: 12px; color: #000000;}
 }
 .homepageButton a:link {
-	background-color: #00d4ff;
+	background-color: #54B5EB;
 	border-radius: 12px;
 	text-decoration: none;
 	color: #000000;
 }
 .homepageButton a:visited {
-	background-color: #00d4ff;
+	-webkit-animation-name: buttonAnimationOut;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation-duration: 0.15s;
+	background-color: #54B5EB;
 	border-radius: 12px;
 	text-decoration: none;
-	color: black;
+	color: #000000;
 }
 .homepageButton a:hover {
+	-webkit-animation-name: buttonAnimationIn;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation-duration: 0.15s;
 	color: #FFFFFF;
 	border-radius: 18px;
 	text-decoration: none;
 	background-color: #6e68d2;
-	animation-name: buttonAnimation;
-	animation-timing-function: ease;
-	animation-duration: 0.15s;
+}
+.homepageButton:hover {
+	-webkit-animation-name: buttonAnimationIn;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation-duration: 0.15s;
+	color: #FFFFFF;
+	border-radius: 48px;
+	text-decoration: none;
+	background-color: #6e68d2;
 }
 .homepageAuthors {
 	position: fixed;
