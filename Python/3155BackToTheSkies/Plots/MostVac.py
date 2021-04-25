@@ -6,20 +6,17 @@ import pandas as pd
 import plotly.graph_objs as go
 import plotly.offline as pyo
 
-
 # Load CSV files from dataset folder
 data1 = pd.read_csv('../Datasets/WHO-COVID-19-global-data.csv')
+data2 = pd.read_csv('../Datasets/vaccination-data.csv')
 
 # Filtering data
-data12 = data1[data1['New_deaths'] >= 5000]
+dataVacPerCap = data2.sort_values(by=['TOTAL_VACCINATIONS_PER100'], ascending=[False]).head(10)
 
 # Preparing data
-data = [go.Bar(x=data12['Date_reported'], y=data12['New_deaths'])]
+
 
 # Preparing layout
-layout = go.Layout(title='xyz', xaxis_title="zzz",
-                   yaxis_title="yml")
+
 
 # Plot the figure and saving in a html file
-fig = go.Figure(data=data, layout=layout)
-pyo.plot(fig, filename='barchart.html')
