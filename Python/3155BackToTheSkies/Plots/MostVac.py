@@ -21,4 +21,4 @@ layoutPer100 = go.Layout(title="Vac per 100", xaxis_title="Country", yaxis_title
 
 # Plot the figure and saving in a html file
 fig = go.Figure(data=dataPer100, layout=layoutPer100)
-pyo.plot(fig, filename='barchart.html')
+pyo.plot(fig, filename='VacPer100barchart.html')
