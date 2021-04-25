@@ -11,10 +11,10 @@ import plotly.offline as pyo
 data1 = pd.read_csv('../Datasets/WHO-COVID-19-global-data.csv')
 
 # Filtering data
-data12 = data1[data1['Date_reported'] == '4/25/2021']
+data12 = data1[data1['New_deaths'] >= 5000]
 
 # Preparing data
-data = [go.Bar(x=data12['Country_code'], y=data12['Cumulative_deaths'])]
+data = [go.Bar(x=data12['Date_reported'], y=data12['New_deaths'])]
 
 # Preparing layout
 layout = go.Layout(title='xyz', xaxis_title="zzz",
