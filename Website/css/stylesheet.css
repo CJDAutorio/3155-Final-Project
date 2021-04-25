@@ -5,4 +5,58 @@
 	padding-top: 1%;
 	font-family: 'Inconsolata', monospace;
 	font-weight: 800;
+<<<<<<< Updated upstream
+=======
+}
+.homepageSubtitle {
+	text-align: center;
+	margin-top: 8px;
+	font-size: 3em;
+	letter-spacing: 4px;
+	font-family: 'Inconsolata', monospace;
+	font-weight: 400;
+}
+.homepageButton {
+	background: #00d4ff;
+	border-radius: 12px;
+	margin-left: 35%;
+	width: 30%;
+}
+.homepageButtonText {
+	text-align: center;
+	margin-top: 8px;
+	font-size: 3em;
+	letter-spacing: 4px;
+	font-family: 'Inconsolata', monospace;
+	font-weight: 400;
+	padding: 5px;
+}
+a:link {
+	background-color: #00d4ff;
+	border-radius: 12px;
+	text-decoration: none;
+	color: black;
+}
+a:visited {
+	background-color: #00d4ff;
+	border-radius: 12px;
+	text-decoration: none;
+	color: black;
+}
+a:hover {
+	color: #FFFFFF;
+	border-radius: 18px;
+	text-decoration: none;
+	background-color: #6e68d2;
+}
+.homepageAuthors {
+	position: fixed;
+	text-align: center;
+	left: 0px;
+	bottom: 0px;
+	margin-left: 3%;
+	font-size: 1.2em;
+	font-family: 'Inconsolata', monospace;
+	font-weight: 400;
+>>>>>>> Stashed changes
 }
