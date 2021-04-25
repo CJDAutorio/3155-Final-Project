@@ -14,7 +14,7 @@ data2 = pd.read_csv('../Datasets/vaccination-data.csv')
 dataVacPerCap = data2.sort_values(by=['TOTAL_VACCINATIONS_PER100'], ascending=[False]).head(10)
 
 # Preparing data
-dataPer100 = [go.Bar(x=dataVacPerCap['COUNTRY'], y=dataVacPerCap['TOTAL_VACCINATIONS_PER100'])/100+'%']
+dataPer100 = [go.Bar(x=dataVacPerCap['COUNTRY'], y=dataVacPerCap['TOTAL_VACCINATIONS_PER100']/100 + '%')]
 
 # Preparing layout
 layoutPer100 = go.Layout(title="Most Vaccinated Counties", title_font_size=22, xaxis_title="Country", yaxis_title="Total per 100")
