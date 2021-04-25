@@ -10,12 +10,13 @@ import plotly.offline as pyo
 data1 = pd.read_csv('../Datasets/WHO-COVID-19-global-data.csv')
 data2 = pd.read_csv('../Datasets/vaccination-data.csv')
 
+app = dash.Dash()
 # --------------------------------
 # STACKED BAR CHART Most Tourism
 # --------------------------------
 
 # --- Filtering data ---
-country_code = ['ESP', 'USA', 'CHN', 'ITA', 'TUR', 'MEX', 'DEU', 'THA', 'GBR']
+country_code = ['ESP', 'USA', 'ITA', 'TUR', 'MEX', 'DEU', 'THA', 'GBR', 'JPN']
 country_pop = [47, 328, 1398, 60, 82, 127, 83, 70, 67]
 
 dataMostTourism = (data2[data2['ISO3'] == 'FRA'])
@@ -27,19 +28,28 @@ dataMostTourism = dataMostTourism.apply(lambda x: x.str.strip() if x.dtype == "o
 dataMostTourism = dataMostTourism.sort_values(by=['TOTAL_VACCINATIONS'], ascending=False)  # Sort by total vaccinations
 dataMostTourism['FullVax'] = (dataMostTourism['TOTAL_VACCINATIONS'] - dataMostTourism['PERSONS_VACCINATED_1PLUS_DOSE'])
 
-
 # --- Preparing data and layout ---
-trace1_tourism = go.Bar(x=dataMostTourism['COUNTRY'], y=dataMostTourism['PERSONS_VACCINATED_1PLUS_DOSE'])
-trace2_tourism = go.Bar(x=dataMostTourism['COUNTRY'], y=dataMostTourism['FullVax'])
-
-data_most_tour = [trace1_tourism, trace1_tourism]
-layout1 = go.Layout(title="Most Vaccinated Counties", title_font_size=22, xaxis_title="Country",
-                    yaxis_title="Percentage Vaccinated")
+trace1_tourism = go.Bar(x=dataMostTourism['COUNTRY'], y=dataMostTourism['PERSONS_VACCINATED_1PLUS_DOSE'],
+                        name='One Does')
+trace2_tourism = go.Bar(x=dataMostTourism['COUNTRY'], y=dataMostTourism['FullVax'], name='full vax')
+data_most_tour = [trace1_tourism, trace2_tourism]
 
 # --- Plot the figure and saving in a html file ---
-dcc.Graph
+app.layout = html.Div(children=[
+    html.H1(children='Python Dash',
+            style={
+                'textAlign': 'center',
+                'color': '#ef3e18'
+            }
+            ),
+    dcc.Graph(figure={'data': data_most_tour,
+                      'layout': go.Layout(title='Corona Virus Cases in the first 20 country expect China',
+                                          xaxis={'title': 'Country'},
+                                          yaxis={'title': 'Number of cases'}, barmode='stack')
+                      })
 
-fig = go.Figure(data=data_most_tour, layout=layout1)
-pyo.plot(fig, filename='barchart.html')
+])
 
-
+# pyo.plot(fig, filename='barchart.html')
+if __name__ == '__main__':
+    app.run_server()
