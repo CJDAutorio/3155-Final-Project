@@ -41,17 +41,19 @@ for x in country_code:
 dataMostTourism = dataMostTourism.apply(lambda x: x.str.strip() if x.dtype == "object" else x)  # Removing empty spaces
 
 dataMostTourism = dataMostTourism.sort_values(by=['TOTAL_VACCINATIONS'], ascending=False)  # Sort by total vaccinations
-dataMostTourism['FullVax'] = dataMostTourism['TOTAL_VACCINATIONS'] - dataMostTourism['PERSONS_VACCINATED_1PLUS_DOSE']
-trace1_tourism = go.Bar()
-trace2_tourism = go.Bar()
+dataMostTourism['FullVax'] = (dataMostTourism['TOTAL_VACCINATIONS'] - dataMostTourism['PERSONS_VACCINATED_1PLUS_DOSE'])
+
 
 # --- Preparing data and layout ---
-dataFin = [go.Bar(x=dataMostTourism['COUNTRY'], y=dataMostTourism['TOTAL_VACCINATIONS'] / 100)]
+trace1_tourism = go.Bar(x=dataMostTourism['COUNTRY'], y=dataMostTourism['PERSONS_VACCINATED_1PLUS_DOSE'])
+trace2_tourism = go.Bar(x=dataMostTourism['COUNTRY'], y=dataMostTourism['FullVax'])
+
+data_most_tour = [trace1_tourism, trace1_tourism]
 layout1 = go.Layout(title="Most Vaccinated Counties", title_font_size=22, xaxis_title="Country",
                     yaxis_title="Percentage Vaccinated")
 
 # --- Plot the figure and saving in a html file ---
-fig = go.Figure(data=dataFin, layout=layout1)
+fig = go.Figure(data=data_most_tour, layout=layout1)
 pyo.plot(fig, filename='barchart.html')
 
 # --------------------------------
