@@ -132,3 +132,5 @@ dmypy.json
 *.exe
 *.bat
 Python/Scripts/activate
+*.xml
+Python/.idea/Python.iml
