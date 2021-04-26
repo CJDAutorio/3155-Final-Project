@@ -18,7 +18,7 @@ app = dash.Dash()
 # --- Filtering data ---
 country_code = ['ESP', 'USA', 'ITA', 'TUR', 'MEX', 'DEU', 'THA', 'GBR', 'JPN']
 country_pop = [47, 328, 1398, 60, 82, 127, 83, 70, 67]
-
+dataMostTourism = (data2[data2['ISO3'] == 'FRA'])
 
 
 for x in country_code:
