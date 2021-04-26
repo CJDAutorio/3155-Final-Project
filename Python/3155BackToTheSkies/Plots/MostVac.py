@@ -19,8 +19,6 @@ app = dash.Dash()
 country_code = ['ESP', 'USA', 'ITA', 'TUR', 'MEX', 'DEU', 'THA', 'GBR', 'JPN']
 country_pop = [47, 328, 1398, 60, 82, 127, 83, 70, 67]
 dataMostTourism = (data2[data2['ISO3'] == 'FRA'])
-# Eat Cheese Brub
-
 
 for x in country_code:
     dataMostTourism = dataMostTourism.append(data2[data2['ISO3'] == x])
