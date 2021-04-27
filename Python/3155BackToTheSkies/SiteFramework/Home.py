@@ -28,8 +28,11 @@ app.layout = html.Div(children=[
     # Body
     html.Div(children=[
         dbc.Row(children=[
-            dbc.Col(html.Div(style={"background-color": "#000000", "height": 500, "width": 500})),
-            dbc.Col(html.Div(html.P("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")))
+            dbc.Col(html.Div(style={"background-color": "#000000", "height": "500px", "width": "500px"})),
+            dbc.Col(html.Div(children=[
+                html.H3("Description"),
+                html.P("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+            ]))
         ])
     ])
 ])
