@@ -4,29 +4,6 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 
-import pandas as pd
-import plotly.graph_objs as go
-import plotly.offline as pyo
-
-# --------------------------------
-# BAR CHART Most Vaccinated Countries
-# --------------------------------
-
-# Load CSV files from dataset folder
-data1 = pd.read_csv('../Datasets/WHO-COVID-19-global-data.csv')
-data2 = pd.read_csv('../Datasets/vaccination-data.csv')
-
-# --- Filtering data ---
-dataVacPerCap = data2.sort_values(by=['TOTAL_VACCINATIONS_PER100'], ascending=[False]).head(10)
-dataVacPerCap = dataVacPerCap.apply(lambda x: x.str.strip() if x.dtype == "object" else x)  # Removing empty spaces
-
-# --- Preparing data and layout ---
-dataPer100 = [go.Bar(x=dataVacPerCap['COUNTRY'], y=dataVacPerCap['TOTAL_VACCINATIONS_PER100'] / 100)]
-layoutPer100 = go.Layout(title="Most Vaccinated Counties", title_font_size=22, xaxis_title="Country",
-                         yaxis_title="Percentage Vaccinated")
-fig = go.Figure(data=dataPer100, layout=layoutPer100)
-
-
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 # the style arguments for the sidebar. We use position:fixed and a fixed width
@@ -73,7 +50,7 @@ app.layout = html.Div([dcc.Location(id="url"), sidebar, content])
 @app.callback(Output("page-content","children"), [Input("url", "pathname")])
 def render_page_content(pathname):
     if pathname == "/":
-        return dcc.Graph(figure=fig)
+        return html.P("Home Page")
     elif pathname == "/page-1":
         return html.P("This is the content of page 1. Yay!")
     elif pathname == "/page-2":
