@@ -18,7 +18,6 @@ app = dash.Dash()
 # --- Filtering data ---
 country_code = ['ESP', 'USA', 'ITA', 'TUR', 'MEX', 'DEU', 'THA', 'GBR', 'JPN']
 country_pop = [47, 328, 1398, 60, 82, 127, 83, 70, 67]
-
 dataMostTourism = (data2[data2['ISO3'] == 'FRA'])
 
 for x in country_code:
@@ -30,7 +29,7 @@ dataMostTourism['FullVax'] = (dataMostTourism['TOTAL_VACCINATIONS'] - dataMostTo
 
 # --- Preparing data and layout ---
 trace1_tourism = go.Bar(x=dataMostTourism['COUNTRY'], y=dataMostTourism['PERSONS_VACCINATED_1PLUS_DOSE'],
-                        name='One Does')
+                        name='One Dose')
 trace2_tourism = go.Bar(x=dataMostTourism['COUNTRY'], y=dataMostTourism['FullVax'], name='full vax')
 data_most_tour = [trace1_tourism, trace2_tourism]
 
@@ -50,6 +49,5 @@ app.layout = html.Div(children=[
 
 ])
 
-# pyo.plot(fig, filename='barchart.html')
 if __name__ == '__main__':
     app.run_server()
