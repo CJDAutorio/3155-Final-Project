@@ -26,8 +26,8 @@ CONTENT_STYLE = {
 
 sidebar = html.Div(
     [
-        html.H2("Sidebar",className="display-4")
-        html.hr(),
+        html.H2("Sidebar",className="display-4"),
+        html.Hr(),
         html.P(
             "Sidebar with nav links", className="lead"
         ),
@@ -39,15 +39,14 @@ sidebar = html.Div(
             ],
             vertical = True,
             pills = True,
-        )
-    ]
+        ),
+    ],
+    style=SIDEBAR_STYLE,
 )
 
-app.layout = dbc.Container(
-    dbc.Alert("Hello Bootstrap!", color="success"),
+content = html.Div(id="page-content", style=CONTENT_STYLE)
 
-    className="p-5",
-)
+app.layout = html.Div([dcc.Location(id="url"), sidebar, content])
 
 if __name__ == "__main__":
     app.run_server()
