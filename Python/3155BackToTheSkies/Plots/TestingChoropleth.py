@@ -6,6 +6,7 @@ import datetime
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
+import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
 
 # Load CSV files from Dataset folder
@@ -16,7 +17,10 @@ data1 = pd.read_csv('../Datasets/COVID-19_Vaccine_Distribution_Allocations_by_Ju
 # --------------------------------
 
 app = dash.Dash()
-
+app.layout = dbc.Container(
+    dbc.Alert("Hello Bootstrap!", color="success"),
+    className="p-5",
+)
 # --- Filtering data ---
 usa_data = data1
 usa_data['Week of Allocations'] = pd.to_datetime(usa_data['Week of Allocations'])
@@ -57,3 +61,4 @@ app.layout = html.Div([
 
 if __name__ == '__main__':
     app.run_server(debug=True)
+
