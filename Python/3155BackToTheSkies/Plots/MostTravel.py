@@ -32,6 +32,10 @@ trace2 = go.Bar(x=dataMostBizz['COUNTRY'],y=(dataMostBizz['PERSONS_VACCINATED_1P
 trace3 = go.Bar(x=dataMostBizz['COUNTRY'],y=dataMostBizz['FullVax'], name='Full Vax')
 data_most_bizz =[trace1, trace2, trace3]
 
+lay = go.Layout(title='Corona Virus Cases in the first 20 country expect China',
+                                          xaxis={'title': 'Country'},
+                                          yaxis={'title': 'Number of cases'}, barmode='stack')
+fig = go.Figure(data=data_most_bizz, layout=lay)
 # --- Plot the figure and saving in a html file ---
 app.layout = html.Div(children=[
     html.H1(children='Python Dash',

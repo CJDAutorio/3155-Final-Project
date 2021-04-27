@@ -3,6 +3,10 @@ import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
+import testClass as t
+import TestingChoroplethTest as y
+import MostTravelTest as k
+
 
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
@@ -43,6 +47,7 @@ sidebar = html.Div(
     style=SIDEBAR_STYLE,
 )
 
+
 content = html.Div(id="page-content", style=CONTENT_STYLE)
 
 app.layout = html.Div([dcc.Location(id="url"), sidebar, content])
@@ -51,11 +56,11 @@ app.layout = html.Div([dcc.Location(id="url"), sidebar, content])
 @app.callback(Output("page-content", "children"), [Input("url", "pathname")])
 def render_page_content(pathname):
     if pathname == "/":
-        return html.P("Home Page")
+        return dcc.Graph(figure=t.returnFig())
     elif pathname == "/page-1":
-        return html.P("This is the content of page 1. Yay!")
+        return dcc.Graph(figure=y.fig)
     elif pathname == "/page-2":
-        return html.P("Oh cool, this is page 2!")
+        return dcc.Graph(figure=k.fig)
 
 
 if __name__ == "__main__":
