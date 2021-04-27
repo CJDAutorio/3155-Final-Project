@@ -6,7 +6,6 @@ from dash.dependencies import Input, Output
 
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
-
 # the style arguments for the sidebar. We use position:fixed and a fixed width
 SIDEBAR_STYLE = {
     "position": "fixed",
@@ -26,19 +25,19 @@ CONTENT_STYLE = {
 
 sidebar = html.Div(
     [
-        html.H2("Sidebar",className="display-4"),
+        html.H2("Sidebar", className="display-4"),
         html.Hr(),
         html.P(
             "Sidebar with nav links", className="lead"
         ),
         dbc.Nav(
             [
-                dbc.NavLink("Home", href="/", active="exact"),
-                dbc.NavLink("Home", href="/page-1", active="exact"),
-                dbc.NavLink("Home", href="/page-2", active="exact"),
+                dbc.NavLink("Test 1", href="/", active="exact"),
+                dbc.NavLink("Test 2", href="/page-1", active="exact"),
+                dbc.NavLink("Test 3", href="/page-2", active="exact"),
             ],
-            vertical = True,
-            pills = True,
+            vertical=True,
+            pills=True,
         ),
     ],
     style=SIDEBAR_STYLE,
@@ -47,6 +46,16 @@ sidebar = html.Div(
 content = html.Div(id="page-content", style=CONTENT_STYLE)
 
 app.layout = html.Div([dcc.Location(id="url"), sidebar, content])
+
+@app.callback(Output("page-content","children"), [Input("url", "pathname")])
+def render_page_content(pathname):
+    if pathname == "/":
+        return html.P("Home Page")
+    elif pathname == "/page-1":
+        return html.P("This is the content of page 1. Yay!")
+    elif pathname == "/page-2":
+        return html.P("Oh cool, this is page 2!")
+
 
 if __name__ == "__main__":
     app.run_server()
