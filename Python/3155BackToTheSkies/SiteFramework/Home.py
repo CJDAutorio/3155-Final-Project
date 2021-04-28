@@ -20,7 +20,7 @@ app.layout = html.Div(children=[
     # Body
     html.Div(children=[
         dbc.Row(children=[
-            dbc.Col(html.Div(style={"background-color": "#000000", "height": "500px", "width": "500px"}), width=6),
+            dbc.Col(html.Div(children=[html.P("PLACEHOLDER FOR IMAGE - GRAPH PREVIEW OR SOMETHING", style={"color": "#FFFFFF", "font-size": "4rem"})], style={"background-color": "#000000", "height": "500px", "width": "500px"}), width=6),
             dbc.Col(html.Div(children=[
                 html.H3("Description"),
                 html.P(
