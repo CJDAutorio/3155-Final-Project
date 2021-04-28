@@ -69,8 +69,6 @@ def sbar1_most_tour():
     for x in country_code:
         data_most_tourism = data_most_tourism.append(data_vax_global[data_vax_global['ISO3'] == x])
 
-    #data_most_tourism = data_most_tourism.apply(lambda x: x.str.strip if x.dtype == "object" else x)
-
     data_most_tourism['FullVax'] = (data_most_tourism['TOTAL_VACCINATIONS'] - data_most_tourism['PERSONS_VACCINATED_1PLUS_DOSE'])
     # Calculates total pop from given info
     data_most_tourism['Total Population'] = \
