@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;800&display=swap');
+
+.homepageDiv {
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.homepageTitle {
+    font-family: 'Inconsolata', monospace;
+    font-weight: 800;
+    padding-left: 50px;
+    font-size: 2rem;
+}
+
+.homepageSubtitle {
+
+}

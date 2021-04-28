@@ -4,27 +4,27 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 
-app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
+external_stylesheets = [dbc.themes.BOOTSTRAP, "../assets/stylesheet.css"]
+app = dash.Dash(name=__name__, external_stylesheets=external_stylesheets)
 
 app.layout = html.Div(children=[
     # Header
     html.Div(children=[
         html.Div(
             dbc.Row(children=[
-                dbc.Col(html.Div(html.H1("Back to the Skies")), width=4),
+                dbc.Col(html.Div(html.H1("Back to the Skies")), width=4, className="homepageTitle"),
                 dbc.Col(html.Div(html.H2("COVID-19 Vaccination Data for Airline Travel")), width="auto")
             ], align="start")
         ),
         # Nav Buttons
         html.Div(children=[
             dbc.Row(children=[
-                dbc.Col(html.Div(html.A("Point to Point", href="https://www.google.com/")), width=4),
+                dbc.Col(html.A(dbc.Button("Point to Point"), href="https://www.google.com/")),
                 dbc.Col(html.Div(html.A("See the Data", href="https://www.google.com/")), width=4),
                 dbc.Col(html.Div(html.A("About Us", href="https://www.google.com/")), width=4)
             ])
         ])
     ]),
-
     # Body
     html.Div(children=[
         dbc.Row(children=[
@@ -35,7 +35,7 @@ app.layout = html.Div(children=[
             ]))
         ])
     ])
-])
+], className="homepageDiv")
 
 if __name__ == "__main__":
     app.run_server()
