@@ -5,15 +5,12 @@ import dash_html_components as html
 from dash.dependencies import Input, Output, State
 import Header as header
 
-# external_stylesheets = [dbc.themes.BOOTSTRAP]
+
 external_stylesheets = ["../assets/bootstrap.min.css"]
 app = dash.Dash(name=__name__, external_stylesheets=external_stylesheets)
 
 
 app.layout = html.Div(children=[
-    # Imports Google fonts
-    html.Link(rel="preconnect", href="https://fonts.gstatic.com"),
-    html.Link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;800&family=Open+Sans&display=swap"),
 
     # Header
     header.getHeader(),

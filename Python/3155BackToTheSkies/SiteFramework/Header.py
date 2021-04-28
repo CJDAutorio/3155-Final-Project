@@ -7,6 +7,9 @@ from dash.dependencies import Input, Output, State
 
 def getHeader():
     header = html.Div(children=[
+        # Imports Google fonts
+        html.Link(rel="preconnect", href="https://fonts.gstatic.com"),
+        html.Link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;800&family=Open+Sans&display=swap"),
         html.Div(children=[
             dbc.Row(children=[
                 dbc.Col(html.Div(html.H1("Back to the Skies")))
