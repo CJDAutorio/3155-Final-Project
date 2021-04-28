@@ -4,15 +4,14 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output, State
 
-#external_stylesheets = [dbc.themes.BOOTSTRAP]
+# external_stylesheets = [dbc.themes.BOOTSTRAP]
 external_stylesheets = ["../assets/bootstrap.min.css"]
 app = dash.Dash(name=__name__, external_stylesheets=external_stylesheets)
 
 app.layout = html.Div(children=[
     # Imports Google fonts
     html.Link(rel="preconnect", href="https://fonts.gstatic.com"),
-    html.Link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"),
-
+    html.Link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;800&family=Open+Sans&display=swap"),
 
     # Header
     html.Div(children=[
@@ -22,20 +21,22 @@ app.layout = html.Div(children=[
             ]),
             dbc.Row(children=[
                 dbc.Col(html.Div(html.H4("COVID-19 Vaccination Data for Airline Travel")))
-            ])],
+            ], style={"font-weight": 400})],
             className="container-fluid"),
 
         # Nav Buttons
         dbc.NavbarSimple(children=[
-            dbc.NavItem(dbc.NavLink("Point to Point", href="#", style={"padding-left": "10px", "padding-right": "10px"})),
+            dbc.NavItem(
+                dbc.NavLink("Point to Point", href="#", style={"padding-left": "10px", "padding-right": "10px"})),
             dbc.NavItem(dbc.NavLink("See the Data", href="#", style={"padding-left": "10px", "padding-right": "10px"})),
             dbc.NavItem(dbc.NavLink("About Us", href="#", style={"padding-left": "10px", "padding-right": "10px"}))
         ],
             brand="Back to the Skies",
             brand_href="#",
             color="primary",
-            dark=True)
-    ]),
+            dark=True,
+            style={"font-family": "'Inconsolata', monospace"})
+    ], style={"padding-top": "1rem", "padding-bottom": "1rem"}),
     # Body
     html.Div(children=[
         dbc.Row(children=[
@@ -60,6 +61,10 @@ def toggle_navbar_collapse(n, is_open):
     if n:
         return not is_open
     return is_open
+
+
+def navbar():
+    return -1
 
 
 if __name__ == "__main__":
