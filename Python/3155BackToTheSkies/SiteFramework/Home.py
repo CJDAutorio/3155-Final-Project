@@ -2,7 +2,7 @@ import dash
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
-from dash.dependencies import Input, Output
+from dash.dependencies import Input, Output, State
 
 external_stylesheets = [dbc.themes.BOOTSTRAP, "../assets/stylesheet.css"]
 app = dash.Dash(name=__name__, external_stylesheets=external_stylesheets)
@@ -17,13 +17,13 @@ app.layout = html.Div(children=[
             ], align="start")
         ),
         # Nav Buttons
-        html.Div(children=[
-            dbc.Row(children=[
-                dbc.Col(html.A(dbc.Button("Point to Point"), href="https://www.google.com/")),
-                dbc.Col(html.Div(html.A("See the Data", href="https://www.google.com/")), width=4),
-                dbc.Col(html.Div(html.A("About Us", href="https://www.google.com/")), width=4)
-            ])
-        ])
+        dbc.Navbar(children=[
+            html.A(dbc.Col("Point to Point"), href="#"),
+            html.A(dbc.Col("See the Data"), href="#"),
+            html.A(dbc.Col("About Us"), href="#")
+        ],
+        color="dark",
+        dark=True)
     ]),
     # Body
     html.Div(children=[
@@ -36,6 +36,17 @@ app.layout = html.Div(children=[
         ])
     ])
 ], className="homepageDiv")
+
+# add callback for toggling the collapse on small screens
+@app.callback(
+    Output("navbar-collapse", "is_open"),
+    [Input("navbar-toggler", "n_clicks")],
+    [State("navbar-collapse", "is_open")],
+)
+def toggle_navbar_collapse(n, is_open):
+    if n:
+        return not is_open
+    return is_open
 
 if __name__ == "__main__":
     app.run_server()
