@@ -11,6 +11,24 @@ data_covid_global = pd.read_csv('../Datasets/WHO-COVID-19-global-data.csv')
 data_vax_global = pd.read_csv('../Datasets/vaccination-data.csv')
 data_vax_usaDist = pd.read_csv('../Datasets/COVID-19_Vaccine_Distribution_Allocations_by_Jurisdiction_-_ModernaWOW.csv')
 
+# Dictionary to translate state names for choropleth maps
+state_codes = {
+    'District of Columbia': 'dc', 'Mississippi': 'MS', 'Oklahoma': 'OK',
+    'Delaware': 'DE', 'Minnesota': 'MN', 'Illinois': 'IL', 'Arkansas': 'AR',
+    'New Mexico': 'NM', 'Indiana': 'IN', 'Maryland': 'MD', 'Louisiana': 'LA',
+    'Idaho': 'ID', 'Wyoming': 'WY', 'Tennessee': 'TN', 'Arizona': 'AZ',
+    'Iowa': 'IA', 'Michigan': 'MI', 'Kansas': 'KS', 'Utah': 'UT',
+    'Virginia': 'VA', 'Oregon': 'OR', 'Connecticut': 'CT', 'Montana': 'MT',
+    'California': 'CA', 'Massachusetts': 'MA', 'West Virginia': 'WV',
+    'South Carolina': 'SC', 'New Hampshire': 'NH', 'Wisconsin': 'WI',
+    'Vermont': 'VT', 'Georgia': 'GA', 'North Dakota': 'ND',
+    'Pennsylvania': 'PA', 'Florida': 'FL', 'Alaska': 'AK', 'Kentucky': 'KY',
+    'Hawaii': 'HI', 'Nebraska': 'NE', 'Missouri': 'MO', 'Ohio': 'OH',
+    'Alabama': 'AL', 'Rhode Island': 'RI', 'South Dakota': 'SD',
+    'Colorado': 'CO', 'New Jersey': 'NJ', 'Washington': 'WA',
+    'North Carolina': 'NC', 'New York': 'NY', 'Texas': 'TX',
+    'Nevada': 'NV', 'Maine': 'ME', 'Palau': 'RIP', "Federal Entities": 'RIP', 'Philadelphia': 'RIP', 'Chicago': 'RIP'}
+
 
 # --------------------------------
 # BAR CHART Most Vaccinated Countries
@@ -62,7 +80,6 @@ def bar2_least_vax():
 # STACKED BAR CHART Most Business Travel Vax Data
 # --------------------------------
 def sbar1_most_bizz():
-
     # --- Filtering data ---
     # List of countries to use for graph
     country_code = ['IRL', 'USA', 'ITA', 'ESP', 'DOM', 'DEU', 'NLD', 'GBR', 'JPN']
@@ -75,14 +92,14 @@ def sbar1_most_bizz():
 
     # calculates total population fully vaccinated
     data_most_bizz['FullVax'] = (
-                data_most_bizz['TOTAL_VACCINATIONS'] - data_most_bizz['PERSONS_VACCINATED_1PLUS_DOSE'])
+            data_most_bizz['TOTAL_VACCINATIONS'] - data_most_bizz['PERSONS_VACCINATED_1PLUS_DOSE'])
     # Calculates total pop of country from given info(per 100 vaccinated and # people vaccinated)
     data_most_bizz['Total Population'] = \
         (data_most_bizz['PERSONS_VACCINATED_1PLUS_DOSE'] / (
-                    data_most_bizz['PERSONS_VACCINATED_1PLUS_DOSE_PER100'] / 100))
+                data_most_bizz['PERSONS_VACCINATED_1PLUS_DOSE_PER100'] / 100))
     # Calculates total population not at all vaccinated
     data_most_bizz['NoVax'] = (
-                data_most_bizz['Total Population'] - data_most_bizz['PERSONS_VACCINATED_1PLUS_DOSE'])
+            data_most_bizz['Total Population'] - data_most_bizz['PERSONS_VACCINATED_1PLUS_DOSE'])
     # sorts the data by population
     data_most_bizz = data_most_bizz.sort_values(by=['Total Population'], ascending=False)
 
@@ -104,8 +121,11 @@ def sbar1_most_bizz():
     fig = go.Figure(data=graph_most_bizz, layout=lay)
     return fig
 
-def sbar2_most_tour():
 
+# --------------------------------
+# STACKED BAR CHART Most Tourism Travel Vax Data
+# --------------------------------
+def sbar2_most_tour():
     # --- Filtering data ---
     # List of countries to use for graph
     country_code = ['ESP', 'USA', 'ITA', 'TUR', 'MEX', 'DEU', 'THA', 'GBR', 'JPN']
@@ -118,14 +138,14 @@ def sbar2_most_tour():
 
     # calculates total population fully vaccinated
     data_most_tourism['FullVax'] = (
-                data_most_tourism['TOTAL_VACCINATIONS'] - data_most_tourism['PERSONS_VACCINATED_1PLUS_DOSE'])
+            data_most_tourism['TOTAL_VACCINATIONS'] - data_most_tourism['PERSONS_VACCINATED_1PLUS_DOSE'])
     # Calculates total pop of country from given info(per 100 vaccinated and # people vaccinated)
     data_most_tourism['Total Population'] = \
         (data_most_tourism['PERSONS_VACCINATED_1PLUS_DOSE'] / (
-                    data_most_tourism['PERSONS_VACCINATED_1PLUS_DOSE_PER100'] / 100))
+                data_most_tourism['PERSONS_VACCINATED_1PLUS_DOSE_PER100'] / 100))
     # Calculates total population not at all vaccinated
     data_most_tourism['NoVax'] = (
-                data_most_tourism['Total Population'] - data_most_tourism['PERSONS_VACCINATED_1PLUS_DOSE'])
+            data_most_tourism['Total Population'] - data_most_tourism['PERSONS_VACCINATED_1PLUS_DOSE'])
     # sorts the data by population
     data_most_tourism = data_most_tourism.sort_values(by=['Total Population'], ascending=False)
 
@@ -145,4 +165,24 @@ def sbar2_most_tour():
 
     # --- Plot the figure and return it ---
     fig = go.Figure(data=graph_most_tourism, layout=lay)
+    return fig
+
+
+# --------------------------------
+# CHOROPLETH MAP United States Vaccination Distribution
+# --------------------------------
+def choropleth1_USA():
+    # --- Filtering data ---
+    data_vax_usa = data_vax_usaDist
+    data_vax_usa = data_vax_usa.sort_values(by=['Week of Allocations'], ascending=[False]).head(60)
+    data_vax_usa = data_vax_usa.apply(lambda x: x.str.strip() if x.dtype == "object" else x)  # Removing empty spaces
+    data_vax_usa['Jurisdiction'] = data_vax_usa['Jurisdiction'].apply(lambda x: state_codes[x])
+
+    # --- Preparing data and layout ---
+    fig = px.choropleth(data_vax_usa, locations='Jurisdiction', locationmode='USA-states',
+                        color="1st Dose Allocations",
+                        hover_name='Jurisdiction', projection="albers usa", title="temp",
+                        color_continuous_scale=px.colors.sequential.Agsunset)
+
+    # --- Plot the figure and return it ---
     return fig
