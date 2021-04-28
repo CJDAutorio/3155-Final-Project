@@ -19,6 +19,7 @@ def bar1_most_vax():
     # --- Filtering data ---
     data_most_vax = data_vax_global.sort_values(by=['TOTAL_VACCINATIONS_PER100'], ascending=[False]).head(10)
     data_most_vax = data_most_vax.apply(lambda x: x.str.strip() if x.dtype == "object" else x)
+
     # --- Preparing data and layout ---
     graph_most_vax = [go.Bar(x=data_most_vax['COUNTRY'], y=(data_most_vax['TOTAL_VACCINATIONS_PER100'] / 100))]
     layout_most_vax = go.Layout(title="Highest Vaccinations Per 100", title_font_size=24, xaxis_title="Country",
