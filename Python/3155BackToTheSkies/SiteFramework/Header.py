@@ -5,17 +5,19 @@ import dash_html_components as html
 from dash.dependencies import Input, Output, State
 
 
-def getHeader():
+def getHeader(title="Back to the Skies", subTitle="COVID-19 Vaccination Data for Airline Travel"):
     header = html.Div(children=[
         # Imports Google fonts
         html.Link(rel="preconnect", href="https://fonts.gstatic.com"),
         html.Link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;800&family=Open+Sans&display=swap"),
+
+        #
         html.Div(children=[
             dbc.Row(children=[
-                dbc.Col(html.Div(html.H1("Back to the Skies")))
+                dbc.Col(html.Div(html.H1(title)))
             ]),
             dbc.Row(children=[
-                dbc.Col(html.Div(html.H4("COVID-19 Vaccination Data for Airline Travel")))
+                dbc.Col(html.Div(html.H4(subTitle)))
             ], style={"font-weight": 400})],
             className="container-fluid"),
 
