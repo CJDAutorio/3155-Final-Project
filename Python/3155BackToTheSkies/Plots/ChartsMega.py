@@ -34,7 +34,9 @@ def bar1_most_vax():
     fig = go.Figure(data=graph_most_vax, layout=layout_most_vax)  # figure used by dash to make chart
     return fig
 
-
+# --------------------------------
+# BAR CHART Least Vaccinated Countries
+# --------------------------------
 def bar2_least_vax():
 
     # --- Filtering data ---
@@ -56,5 +58,22 @@ def bar2_least_vax():
     fig = go.Figure(data=graph_least_vax, layout=layout_least_vax)  # figure used by dash to make chart
     return fig
 
+# --------------------------------
+# STACKED BAR CHART Most Tourism Vax Data
+# --------------------------------
+def sbar1_most_tour():
 
-pyo.plot(bar2_least_vax(), filename='test.html')
+    # --- Filtering data ---
+    country_code = ['ESP', 'USA', 'ITA', 'TUR', 'MEX', 'DEU', 'THA', 'GBR', 'JPN']
+    data_most_tourism = data_vax_global[data_vax_global['ISO3'] == 'FRA']
+    for x in country_code:
+        data_most_tourism = data_most_tourism.append(data_vax_global[data_vax_global['ISO3'] == x])
+    data_most_tourism = data_most_tourism.apply(lambda x: x.str.strip if x.dtype == "object" else x)
+
+
+    # --- Preparing data and layout ---
+
+    # --- Plot the figure and saving in a html file ---
+
+
+
