@@ -174,6 +174,7 @@ def sbar2_most_tour():
 def choropleth1_USA():
     # --- Filtering data ---
     data_vax_usa = data_vax_usaDist
+    data_vax_usa['Week of Allocations'] = pd.to_datetime(data_vax_usa['Week of Allocations'])
     data_vax_usa = data_vax_usa.sort_values(by=['Week of Allocations'], ascending=[False]).head(60)
     data_vax_usa = data_vax_usa.apply(lambda x: x.str.strip() if x.dtype == "object" else x)  # Removing empty spaces
     data_vax_usa['Jurisdiction'] = data_vax_usa['Jurisdiction'].apply(lambda x: state_codes[x])
@@ -181,7 +182,7 @@ def choropleth1_USA():
     # --- Preparing data and layout ---
     fig = px.choropleth(data_vax_usa, locations='Jurisdiction', locationmode='USA-states',
                         color="1st Dose Allocations",
-                        hover_name='Jurisdiction', projection="albers usa", title="temp",
+                        hover_name='Jurisdiction', projection="albers usa", title="Vaccine allocation by state",
                         color_continuous_scale=px.colors.sequential.Agsunset)
 
     # --- Plot the figure and return it ---
