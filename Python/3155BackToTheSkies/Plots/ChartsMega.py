@@ -30,12 +30,12 @@ def bar1_most_vax():
 
 def bar2_least_vax():
     # --- Filtering data ---
-    data_least_vax
-    data_least_vax = data_vax_global.sort_values(by=['TOTAL_VACCINATIONS_PER100'], ascending=[True]).head(10)
+    data_least_vax = data_vax_global[data_vax_global['TOTAL_VACCINATIONS_PER100'] > 1]
+    data_least_vax = data_least_vax.sort_values(by=['TOTAL_VACCINATIONS_PER100'], ascending=[True]).head(10)
     data_least_vax = data_least_vax.apply(lambda x: x.str.strip() if x.dtype == "object" else x)
     # --- Preparing data and layout ---
     graph_least_vax = [go.Bar(x=data_least_vax['COUNTRY'], y=(data_least_vax['TOTAL_VACCINATIONS_PER100'] / 100))]
-    layout_least_vax = go.Layout(title="Highest Vaccinations Per 100", title_font_size=24, xaxis_title="Country",
+    layout_least_vax = go.Layout(title="Lowest Vaccinations Per 100", title_font_size=24, xaxis_title="Country",
                                  yaxis_title="Percentage Vaccinated")
     # --- Plot the figure and return it ---
     fig = go.Figure(data=graph_least_vax, layout=layout_least_vax)
