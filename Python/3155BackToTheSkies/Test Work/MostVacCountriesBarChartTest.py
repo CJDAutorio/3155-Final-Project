@@ -30,4 +30,4 @@ pyo.plot(fig, filename='VacPer100barchart.html')
 
 # --- Preparing data and layout ---
 
-# --- Plot the figure and saving in a html file ---
+# --- Plot the figure and return it ---
