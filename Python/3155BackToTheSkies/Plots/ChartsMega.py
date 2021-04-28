@@ -61,11 +61,54 @@ def bar2_least_vax():
 # --------------------------------
 # STACKED BAR CHART Most Business Travel Vax Data
 # --------------------------------
-def sbar1_most_tour():
+def sbar1_most_bizz():
 
     # --- Filtering data ---
     # List of countries to use for graph
     country_code = ['IRL', 'USA', 'ITA', 'ESP', 'DOM', 'DEU', 'NLD', 'GBR', 'JPN']
+    # Creates dataFrame and adds first country
+    data_most_bizz = (data_vax_global[data_vax_global['ISO3'] == 'FRA'])
+
+    # adds countries from list to data frame using data_vax_global data
+    for x in country_code:
+        data_most_bizz = data_most_bizz.append(data_vax_global[data_vax_global['ISO3'] == x])
+
+    # calculates total population fully vaccinated
+    data_most_bizz['FullVax'] = (
+                data_most_bizz['TOTAL_VACCINATIONS'] - data_most_bizz['PERSONS_VACCINATED_1PLUS_DOSE'])
+    # Calculates total pop of country from given info(per 100 vaccinated and # people vaccinated)
+    data_most_bizz['Total Population'] = \
+        (data_most_bizz['PERSONS_VACCINATED_1PLUS_DOSE'] / (
+                    data_most_bizz['PERSONS_VACCINATED_1PLUS_DOSE_PER100'] / 100))
+    # Calculates total population not at all vaccinated
+    data_most_bizz['NoVax'] = (
+                data_most_bizz['Total Population'] - data_most_bizz['PERSONS_VACCINATED_1PLUS_DOSE'])
+    # sorts the data by population
+    data_most_bizz = data_most_bizz.sort_values(by=['Total Population'], ascending=False)
+
+    # --- Preparing data and layout ---
+    # 3 trace's used for each stacking level of the bar chart
+    trace1 = go.Bar(x=data_most_bizz['COUNTRY'], y=data_most_bizz['NoVax'], name='No Vax')
+    trace2 = go.Bar(x=data_most_bizz['COUNTRY'],
+                    y=(data_most_bizz['PERSONS_VACCINATED_1PLUS_DOSE'] - data_most_bizz['FullVax']),
+                    name='Partial Vax')
+    trace3 = go.Bar(x=data_most_bizz['COUNTRY'], y=data_most_bizz['FullVax'], name='Full Vax')
+    # sets data for graph
+    graph_most_bizz = [trace1, trace2, trace3]
+    # sets layout for graph
+    lay = go.Layout(title='Title Here',
+                    xaxis={'title': 'Country'},
+                    yaxis={'title': 'Population'}, barmode='stack')
+
+    # --- Plot the figure and return it ---
+    fig = go.Figure(data=graph_most_bizz, layout=lay)
+    return fig
+
+def sbar2_most_tour():
+
+    # --- Filtering data ---
+    # List of countries to use for graph
+    country_code = ['ESP', 'USA', 'ITA', 'TUR', 'MEX', 'DEU', 'THA', 'GBR', 'JPN']
     # Creates dataFrame and adds first country
     data_most_tourism = (data_vax_global[data_vax_global['ISO3'] == 'FRA'])
 
@@ -94,12 +137,12 @@ def sbar1_most_tour():
                     name='Partial Vax')
     trace3 = go.Bar(x=data_most_tourism['COUNTRY'], y=data_most_tourism['FullVax'], name='Full Vax')
     # sets data for graph
-    graph_most_bizz = [trace1, trace2, trace3]
+    graph_most_tourism = [trace1, trace2, trace3]
     # sets layout for graph
     lay = go.Layout(title='Title Here',
                     xaxis={'title': 'Country'},
                     yaxis={'title': 'Population'}, barmode='stack')
 
     # --- Plot the figure and return it ---
-    fig = go.Figure(data=graph_most_bizz, layout=lay)
+    fig = go.Figure(data=graph_most_tourism, layout=lay)
     return fig
