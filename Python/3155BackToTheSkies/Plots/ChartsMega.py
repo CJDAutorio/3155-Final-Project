@@ -40,7 +40,7 @@ def bar1_most_vax():
 def bar2_least_vax():
     # --- Filtering data ---
     # removes countries that haven't started vaccinations
-    data_least_vax = data_vax_global[data_vax_global['TOTAL_VACCINATIONS_PER100'] > 1]
+    data_least_vax = (data_vax_global[data_vax_global['TOTAL_VACCINATIONS_PER100'] > 1])
     # Sorts data by TOTAL_VACCINATIONS_PER100 then removes all but the top 10
     data_least_vax = data_least_vax.sort_values(by=['TOTAL_VACCINATIONS_PER100'], ascending=[True]).head(10)
     # removes empty spaces from data
@@ -59,16 +59,38 @@ def bar2_least_vax():
 
 
 # --------------------------------
-# STACKED BAR CHART Most Tourism Vax Data
+# STACKED BAR CHART Most Business Travel Vax Data
 # --------------------------------
 def sbar1_most_tour():
     # --- Filtering data ---
-    country_code = ['ESP', 'USA', 'ITA', 'TUR', 'MEX', 'DEU', 'THA', 'GBR', 'JPN']
-    data_most_tourism = data_vax_global[data_vax_global['ISO3'] == 'FRA']
+    country_code = ['IRL', 'USA', 'ITA', 'ESP', 'DOM', 'DEU', 'NLD', 'GBR', 'JPN']
+    data_most_tourism = (data_vax_global[data_vax_global['ISO3'] == 'FRA'])
+
     for x in country_code:
         data_most_tourism = data_most_tourism.append(data_vax_global[data_vax_global['ISO3'] == x])
-    data_most_tourism = data_most_tourism.apply(lambda x: x.str.strip if x.dtype == "object" else x)
+
+    #data_most_tourism = data_most_tourism.apply(lambda x: x.str.strip if x.dtype == "object" else x)
+
+    data_most_tourism['FullVax'] = (data_most_tourism['TOTAL_VACCINATIONS'] - data_most_tourism['PERSONS_VACCINATED_1PLUS_DOSE'])
+    # Calculates total pop from given info
+    data_most_tourism['Total Population'] = \
+        (data_most_tourism['PERSONS_VACCINATED_1PLUS_DOSE'] / (data_most_tourism['PERSONS_VACCINATED_1PLUS_DOSE_PER100'] / 100))
+    data_most_tourism['NoVax'] = (data_most_tourism['Total Population'] - data_most_tourism['PERSONS_VACCINATED_1PLUS_DOSE'])
+    print(data_most_tourism)
+    data_most_tourism = data_most_tourism.sort_values(by=['Total Population'], ascending=False)
 
     # --- Preparing data and layout ---
+    trace1 = go.Bar(x=data_most_tourism['COUNTRY'], y=data_most_tourism['NoVax'], name='No Vax')
+    trace2 = go.Bar(x=data_most_tourism['COUNTRY'],
+                    y=(data_most_tourism['PERSONS_VACCINATED_1PLUS_DOSE'] - data_most_tourism['FullVax']),
+                    name='Partial Vax')
+    trace3 = go.Bar(x=data_most_tourism['COUNTRY'], y=data_most_tourism['FullVax'], name='Full Vax')
+    graph_most_bizz = [trace1, trace2, trace3]
+
+    lay = go.Layout(title='Title Here',
+                    xaxis={'title': 'Country'},
+                    yaxis={'title': 'Population'}, barmode='stack')
 
     # --- Plot the figure and saving in a html file ---
+    fig = go.Figure(data=graph_most_bizz, layout=lay)
+    return fig
