@@ -9,6 +9,11 @@ external_stylesheets = ["../assets/bootstrap.min.css"]
 app = dash.Dash(name=__name__, external_stylesheets=external_stylesheets)
 
 app.layout = html.Div(children=[
+    # Imports Google fonts
+    html.Link(rel="preconnect", href="https://fonts.gstatic.com"),
+    html.Link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"),
+
+
     # Header
     html.Div(children=[
         html.Div(children=[
@@ -21,25 +26,25 @@ app.layout = html.Div(children=[
             className="container-fluid"),
 
         # Nav Buttons
-        dbc.Navbar(children=[
-            dbc.Row(children=[
-                html.A(dbc.Col(html.P("Point to Point")), href="#"),
-                html.A(dbc.Col(html.P("See the Data")), href="#"),
-                html.A(dbc.Col(html.P("About Us")), href="#")
-            ])
+        dbc.NavbarSimple(children=[
+            dbc.NavItem(dbc.NavLink("Point to Point", href="#", style={"padding-left": "10px", "padding-right": "10px"})),
+            dbc.NavItem(dbc.NavLink("See the Data", href="#", style={"padding-left": "10px", "padding-right": "10px"})),
+            dbc.NavItem(dbc.NavLink("About Us", href="#", style={"padding-left": "10px", "padding-right": "10px"}))
         ],
-            color="dark",
+            brand="Back to the Skies",
+            brand_href="#",
+            color="primary",
             dark=True)
     ]),
     # Body
     html.Div(children=[
         dbc.Row(children=[
-            dbc.Col(html.Div(style={"background-color": "#000000", "height": "500px", "width": "500px"})),
+            dbc.Col(html.Div(style={"background-color": "#000000", "height": "500px", "width": "500px"}), width=6),
             dbc.Col(html.Div(children=[
                 html.H3("Description"),
                 html.P(
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
-            ]))
+            ]), width=6)
         ])
     ], className="container-fluid")
 ], className="container-xl")
