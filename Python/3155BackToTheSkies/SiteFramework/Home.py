@@ -11,12 +11,15 @@ app = dash.Dash(name=__name__, external_stylesheets=external_stylesheets)
 app.layout = html.Div(children=[
     # Header
     html.Div(children=[
-        html.Div(
+        html.Div(children=[
             dbc.Row(children=[
-                dbc.Col(html.Div(html.H1("Back to the Skies")), width="auto", className="homepageTitle"),
-                dbc.Col(html.Div(html.H3("COVID-19 Vaccination Data for Airline Travel")), width="auto")
-            ], align="start")
-            , className="container-fluid"),
+                dbc.Col(html.Div(html.H1("Back to the Skies")))
+            ]),
+            dbc.Row(children=[
+                dbc.Col(html.Div(html.H4("COVID-19 Vaccination Data for Airline Travel")))
+            ])],
+            className="container-fluid"),
+
         # Nav Buttons
         dbc.Navbar(children=[
             dbc.Row(children=[
