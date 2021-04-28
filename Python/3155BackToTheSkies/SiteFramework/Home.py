@@ -23,9 +23,9 @@ app.layout = html.Div(children=[
         # Nav Buttons
         dbc.Navbar(children=[
             dbc.Row(children=[
-                html.A(dbc.Col("Point to Point"), href="#"),
-                html.A(dbc.Col("See the Data"), href="#"),
-                html.A(dbc.Col("About Us"), href="#")
+                html.A(dbc.Col(html.P("Point to Point")), href="#"),
+                html.A(dbc.Col(html.P("See the Data")), href="#"),
+                html.A(dbc.Col(html.P("About Us")), href="#")
             ])
         ],
             color="dark",
