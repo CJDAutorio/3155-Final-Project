@@ -1,3 +1,4 @@
+/* CSS Document */
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;800&display=swap');
 .titleDiv {
 	margin: auto;
@@ -12,70 +13,25 @@
 }
 .homepageSubtitle {
 	text-align: center;
-	margin-top: 8px;
+	margin-top: 6px;
 	font-size: 3em;
 	letter-spacing: 4px;
 	font-family: 'Inconsolata', monospace;
 	font-weight: 400;
-}
-.homepageButton {
-	background-color: #54B5EB;
-	border-radius: 12px;
-	margin-left: 35%;
-	width: 30%;
-	-webkit-animation-name: buttonAnimationOut;
-	-webkit-animation-timing-function: ease;
-	-webkit-animation-duration: 0.15s;
 }
 .homepageButtonText {
 	text-align: center;
-	margin-top: 80px;
+	margin-top: 6px;
 	font-size: 3em;
 	letter-spacing: 4px;
 	font-family: 'Inconsolata', monospace;
 	font-weight: 400;
+	width: 30%;
 	padding: 5px;
-}
-@-webkit-keyframes buttonAnimationIn {
-	from {background-color: #54B5EB; border-radius: 12px; color: #54B5EB;}
-	to {background-color: #6e68d2; border-radius: 48px; color: #FFFFFF;}
-}
-@-webkit-keyframes buttonAnimationOut {
-	from {background-color: #6e68d2; border-radius: 48px; color: #FFFFFF;}
-	to {background-color: #54B5EB; border-radius: 12px; color: #000000;}
-}
-.homepageButton a:link {
-	background-color: #54B5EB;
-	border-radius: 12px;
-	text-decoration: none;
-	color: #000000;
-}
-.homepageButton a:visited {
-	-webkit-animation-name: buttonAnimationOut;
-	-webkit-animation-timing-function: ease;
-	-webkit-animation-duration: 0.15s;
-	background-color: #54B5EB;
-	border-radius: 12px;
-	text-decoration: none;
-	color: #000000;
-}
-.homepageButton a:hover {
-	-webkit-animation-name: buttonAnimationIn;
-	-webkit-animation-timing-function: ease;
-	-webkit-animation-duration: 0.15s;
-	color: #FFFFFF;
-	border-radius: 18px;
-	text-decoration: none;
-	background-color: #6e68d2;
-}
-.homepageButton:hover {
-	-webkit-animation-name: buttonAnimationIn;
-	-webkit-animation-timing-function: ease;
-	-webkit-animation-duration: 0.15s;
-	color: #FFFFFF;
-	border-radius: 48px;
-	text-decoration: none;
-	background-color: #6e68d2;
+	margin-left: 35%;
+	background: rgb(110,104,210);
+	background: -webkit-linear-gradient(left, rgba(110,104,210,1) 0%, rgba(0,212,255,1) 100%);
+	border-radius: 7px;
 }
 .homepageAuthors {
 	position: fixed;
@@ -86,4 +42,13 @@
 	font-size: 1.2em;
 	font-family: 'Inconsolata', monospace;
 	font-weight: 400;
+}
+
+.dataTitle {
+	text-align: center;
+	margin-top: 1%;
+	font-size: 4.5em;
+	letter-spacing: 4px;
+	font-family: 'Inconsolata', monospace;
+	font-weight: 800;
 }
