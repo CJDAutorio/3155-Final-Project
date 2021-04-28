@@ -3,8 +3,8 @@ import plotly.graph_objs as go
 import plotly.offline as pyo
 
 # Load CSV files from dataset folder
-data1 = pd.read_csv('../Datasets/WHO-COVID-19-global-data.csv')
-data2 = pd.read_csv('../Datasets/vaccination-data.csv')
+data1 = pd.read_csv('../../Datasets/WHO-COVID-19-global-data.csv')
+data2 = pd.read_csv('../../Datasets/vaccination-data.csv')
 
 # --------------------------------
 # BAR CHART Most Vaccinated Countries

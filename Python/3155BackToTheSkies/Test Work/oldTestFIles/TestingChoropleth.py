@@ -10,7 +10,7 @@ import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
 
 # Load CSV files from Dataset folder
-data1 = pd.read_csv('../Datasets/COVID-19_Vaccine_Distribution_Allocations_by_Jurisdiction_-_ModernaWOW.csv')
+data1 = pd.read_csv('../../Datasets/COVID-19_Vaccine_Distribution_Allocations_by_Jurisdiction_-_ModernaWOW.csv')
 
 # --------------------------------
 # STACKED BAR CHART Most Tourism
