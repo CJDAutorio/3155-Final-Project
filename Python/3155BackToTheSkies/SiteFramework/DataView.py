@@ -8,8 +8,36 @@ import Header as header
 external_stylesheets = ["../assets/bootstrap.min.css"]
 app = dash.Dash(name=__name__, external_stylesheets=external_stylesheets)
 
+# Sidebar for quickly changing graph type
+sideBar = html.Div(children=[
+    html.H3("Graphs"),
+    dbc.Nav(children=[
+        dbc.NavItem(dbc.NavLink("Graph Type", href="#"), active="exact"),
+        dbc.NavItem(dbc.NavLink("Graph Type", href="#"), active="exact"),
+        dbc.NavItem(dbc.NavLink("Graph Type", href="#"), active="exact"),
+        dbc.NavItem(dbc.NavLink("Graph Type", href="#"), active="exact"),
+        dbc.NavItem(dbc.NavLink("Graph Type", href="#"), active="exact"),
+        dbc.NavItem(dbc.NavLink("Graph Type", href="#"), active="exact")
+    ],
+        vertical=True,
+        pills=True)
+])
+
+# Actual graph content
+content = html.Div(children=[
+
+], className="container-fluid", style={"background-color": "#000000"})
+
 app.layout = html.Div(children=[
-    header.getHeader()
+    header.getHeader(),
+    dbc.Row(children=[
+        dbc.Col(children=[
+            sideBar
+        ], style={"width": "2"}),
+        dbc.Col(children=[
+            content
+        ]),
+    ])
 ], className="container-xl")
 
 
