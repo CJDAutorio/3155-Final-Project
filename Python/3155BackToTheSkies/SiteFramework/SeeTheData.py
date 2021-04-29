@@ -9,7 +9,7 @@ external_stylesheets = ["../assets/bootstrap.min.css"]
 app = dash.Dash(name=__name__, external_stylesheets=external_stylesheets)
 
 
-def createCard(cardTitle, cardText, cardButtonText, cardWidth="18rem", cardImage="https://via.placeholder.com/150", cardColor="primary"):
+def createCard(cardTitle, cardText, cardButtonText, cardWidth="18rem", cardImage="https://via.placeholder.com/69", cardColor="primary"):
     card = dbc.Card(children=[
         dbc.CardImg(src=cardImage, top=True),
         dbc.CardBody([
@@ -28,13 +28,13 @@ app.layout = html.Div(children=[
         dbc.Row(children=[
             dbc.Col(children=[
                 createCard(cardTitle="Test Card", cardText="A test card's description.", cardButtonText="Button")
-            ], width=4),
+            ], width=4, align="center"),
             dbc.Col(children=[
                 createCard(cardTitle="Test Card", cardText="A test card's description.", cardButtonText="Button")
-            ], width=4),
+            ], width=4, align="center"),
             dbc.Col(children=[
                 createCard(cardTitle="Test Card", cardText="A test card's description.", cardButtonText="Button")
-            ], width=4)
+            ], width=4, align="center")
         ], justify="center")
     ])
 ], className="container-xl")
