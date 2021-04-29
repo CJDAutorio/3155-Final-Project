@@ -9,13 +9,15 @@ external_stylesheets = ["../assets/bootstrap.min.css"]
 app = dash.Dash(name=__name__, external_stylesheets=external_stylesheets)
 
 
-def createCard(cardTitle, cardText, cardButtonText, cardWidth="3", cardImage="https://via.placeholder.com/69", cardColor="primary", cardLink="#"):
+def createCard(cardTitle, cardText, cardButtonText, cardWidth="3", cardImage="https://via.placeholder.com/69",
+               cardColor="primary", cardLink="#"):
     card = dbc.Card(children=[
         dbc.CardImg(src=cardImage, top=True),
         dbc.CardBody([
             html.H4(cardTitle, className="card-title"),
             html.P(cardText, className="card-text"),
-            dbc.Button(cardButtonText, color=cardColor, style={"font-family": "'Inconsolata', monospace"}, href=cardLink)
+            dbc.Button(cardButtonText, color=cardColor, style={"font-family": "'Inconsolata', monospace"},
+                       href=cardLink)
         ])
     ], style={"width": cardWidth})
     return card
