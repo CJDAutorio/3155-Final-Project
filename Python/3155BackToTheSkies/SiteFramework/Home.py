@@ -32,9 +32,12 @@ app.layout = html.Div(children=[
                                        html.P("PLACEHOLDER FOR GRAPH PREVIEW", style={"color": "#000000", "font-size": "4rem"})
                                        ], style={"height": "300px", "width": "500px"}), width=6),
             dbc.Col(html.Div(children=[
-                html.H3("Description"),
+                html.H3("Description of Graphs"),
                 html.P(
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut "
+                    "labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra "
+                    "maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
+                    "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
             ]), width=6)
         ])
     ], className="container-fluid")
