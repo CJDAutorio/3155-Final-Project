@@ -17,9 +17,20 @@ app.layout = html.Div(children=[
     # Body
     html.Div(children=[
         dbc.Row(children=[
+            dbc.Jumbotron(children=[
+                html.H2("Back to the Skies"),
+                html.P("A solution for safer travelling during the COVID-19 Pandemic.", className="lead"),
+                html.Hr(className="my-2"),
+                html.P("Back to the Skies helps society slowly return to normalcy while staying as safe as possible "
+                       "during this global pandemic by providing data on vaccinations in most possible travel "
+                       "destinations. We hope to help promote airline travel to customers by providing an additional "
+                       "sense of safety through comparative data.")
+            ])
+        ]),
+        dbc.Row(children=[
             dbc.Col(html.Div(children=[html.Img(src="https://via.placeholder.com/69"),
-                                       html.P("PLACEHOLDER FOR IMAGE - GRAPH PREVIEW OR SOMETHING", style={"color": "#000000", "font-size": "4rem"})
-                                       ], style={"height": "500px", "width": "500px"}), width=6),
+                                       html.P("PLACEHOLDER FOR GRAPH PREVIEW", style={"color": "#000000", "font-size": "4rem"})
+                                       ], style={"height": "300px", "width": "500px"}), width=6),
             dbc.Col(html.Div(children=[
                 html.H3("Description"),
                 html.P(
