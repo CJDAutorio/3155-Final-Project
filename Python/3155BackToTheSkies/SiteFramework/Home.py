@@ -16,6 +16,7 @@ app.layout = html.Div(children=[
     header.getHeader(),
     # Body
     html.Div(children=[
+        # Jumbotron
         dbc.Row(children=[
             dbc.Jumbotron(children=[
                 html.H2("Back to the Skies"),
@@ -27,6 +28,7 @@ app.layout = html.Div(children=[
                        "sense of safety through comparative data.")
             ])
         ]),
+        # Graph preview description
         dbc.Row(children=[
             dbc.Col(html.Div(children=[html.Img(src="https://via.placeholder.com/69"),
                                        html.P("PLACEHOLDER FOR GRAPH PREVIEW", style={"color": "#000000", "font-size": "4rem"})

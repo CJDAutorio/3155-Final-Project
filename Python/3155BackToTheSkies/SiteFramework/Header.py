@@ -11,7 +11,7 @@ def getHeader(title="Back to the Skies", subTitle="COVID-19 Vaccination Data for
         html.Link(rel="preconnect", href="https://fonts.gstatic.com"),
         html.Link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;800&family=Open+Sans&display=swap"),
 
-        #
+        # Title and Subtitle
         html.Div(children=[
             dbc.Row(children=[
                 dbc.Col(html.Div(html.H1(title)))
