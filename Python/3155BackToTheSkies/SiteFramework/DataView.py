@@ -10,7 +10,7 @@ app = dash.Dash(name=__name__, external_stylesheets=external_stylesheets)
 
 # Sidebar for quickly changing graph type
 sideBar = html.Div(children=[
-    html.H3("Graphs"),
+    html.H3("Graph Types"),
     # Changes graph data
     dbc.Nav(children=[
         dbc.NavItem(dbc.NavLink("Graph Type", href="/graph1"), active="exact"),
@@ -41,6 +41,10 @@ app.layout = html.Div(children=[
 ], className="container-xl")
 
 
+def getLayout():
+    return app.layout
+
+
 # add callback for toggling the collapse on small screens
 @app.callback(
     Output("navbar-collapse", "is_open"),
@@ -53,6 +57,7 @@ def toggle_navbar_collapse(n, is_open):
     return is_open
 
 
+# Changes graph on button clicked
 @app.callback(Output("page-content", "children"), [Input("url", "pathname")])
 def render_page_content(pathname):
     if pathname == "/":
