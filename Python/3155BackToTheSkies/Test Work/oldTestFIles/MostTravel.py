@@ -8,7 +8,7 @@ import plotly.offline as pyo
 # --------------------------------
 # STACKED BAR CHART Most Business Travel
 # --------------------------------
-data2 = pd.read_csv('../Datasets/vaccination-data.csv')
+data2 = pd.read_csv('../../Datasets/vaccination-data.csv')
 app = dash.Dash()
 # --- Filtering data ---
 country_code = ['IRL', 'USA', 'ITA', 'ESP', 'DOM', 'DEU', 'NLD', 'GBR', 'JPN']
