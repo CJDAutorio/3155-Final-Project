@@ -10,7 +10,7 @@ def getHeader(title="Back to the Skies", subTitle="COVID-19 Vaccination Data for
         # Imports Google fonts
         html.Link(rel="preconnect", href="https://fonts.gstatic.com"),
         html.Link(rel="stylesheet",
-                  href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;800&family=Open+Sans&display=swap"),
+                  href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;800&family=Open+Sans:wght@300;400&display=swap"),
 
         # Title and Subtitle
         html.Div(children=[
