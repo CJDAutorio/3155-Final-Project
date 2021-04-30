@@ -29,24 +29,30 @@ app.layout = html.Div(children=[
     html.Div(children=[
         dbc.Row(children=[
             dbc.Col(children=[
-                createCard(cardTitle="Test Card", cardText="A test card's description.", cardButtonText="Button")
+                createCard(cardTitle="Test Card", cardText="A test card's description.", cardButtonText="Button",
+                           cardLink="/")
             ], align="center"),
             dbc.Col(children=[
-                createCard(cardTitle="Test Card", cardText="A test card's description.", cardButtonText="Button")
+                createCard(cardTitle="Test Card", cardText="A test card's description.", cardButtonText="Button",
+                           cardLink="/")
             ], align="center"),
             dbc.Col(children=[
-                createCard(cardTitle="Test Card", cardText="A test card's description.", cardButtonText="Button")
+                createCard(cardTitle="Test Card", cardText="A test card's description.", cardButtonText="Button",
+                           cardLink="/")
             ], align="center")
         ], justify="around", style={"padding-bottom": "1rem"}),
         dbc.Row(children=[
             dbc.Col(children=[
-                createCard(cardTitle="Test Card", cardText="A test card's description.", cardButtonText="Button")
+                createCard(cardTitle="Test Card", cardText="A test card's description.", cardButtonText="Button",
+                           cardLink="/")
             ], align="center"),
             dbc.Col(children=[
-                createCard(cardTitle="Test Card", cardText="A test card's description.", cardButtonText="Button")
+                createCard(cardTitle="Test Card", cardText="A test card's description.", cardButtonText="Button",
+                           cardLink="/")
             ], align="center"),
             dbc.Col(children=[
-                createCard(cardTitle="Test Card", cardText="A test card's description.", cardButtonText="Button")
+                createCard(cardTitle="Test Card", cardText="A test card's description.", cardButtonText="Button",
+                           cardLink="/")
             ], align="center")
         ], justify="around", style={"padding-bottom": "1rem"})
     ])
