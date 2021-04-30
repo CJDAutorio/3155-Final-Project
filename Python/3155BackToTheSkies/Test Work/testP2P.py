@@ -25,7 +25,7 @@ state_codes = {
     'North Carolina': 'NC', 'New York': 'NY', 'Texas': 'TX',
     'Nevada': 'NV', 'Maine': 'ME', 'Palau': 'RIP', "Federal Entities": 'RIP', 'Philadelphia': 'RIP',}
 
-states = list(state_codes.keys())
+states = list(state_codes.keys()) 
 
 app.layout = html.Div(children=[
     html.H1(children='Python Dash',
