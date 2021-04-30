@@ -9,7 +9,8 @@ def getHeader(title="Back to the Skies", subTitle="COVID-19 Vaccination Data for
     header = html.Div(children=[
         # Imports Google fonts
         html.Link(rel="preconnect", href="https://fonts.gstatic.com"),
-        html.Link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;800&family=Open+Sans&display=swap"),
+        html.Link(rel="stylesheet",
+                  href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;800&family=Open+Sans&display=swap"),
 
         # Title and Subtitle
         html.Div(children=[
@@ -24,12 +25,13 @@ def getHeader(title="Back to the Skies", subTitle="COVID-19 Vaccination Data for
         # Nav Buttons
         dbc.NavbarSimple(children=[
             dbc.NavItem(
-                dbc.NavLink("Point to Point", href="#", style={"padding-left": "10px", "padding-right": "10px"})),
-            dbc.NavItem(dbc.NavLink("See the Data", href="#", style={"padding-left": "10px", "padding-right": "10px"})),
+                dbc.NavLink("Point to Point", href="/", style={"padding-left": "10px", "padding-right": "10px"})),
+            dbc.NavItem(dbc.NavLink("See the Data", href="/see_the_data",
+                                    style={"padding-left": "10px", "padding-right": "10px"})),
             dbc.NavItem(dbc.NavLink("About Us", href="#", style={"padding-left": "10px", "padding-right": "10px"}))
         ],
             brand="Back to the Skies",
-            brand_href="#",
+            brand_href="/",
             color="primary",
             dark=True,
             style={"font-family": "'Inconsolata', monospace"})
