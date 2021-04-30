@@ -19,8 +19,8 @@ def display_page(pathname):
         return home.getLayout()
     elif pathname == '/see_the_data':
         return seeTheData.getLayout()
-    elif pathname == '/see_the_data':
-        return seeTheData.getLayout()
+    elif pathname == '/data_view':
+        return dataView.getLayout()
     else:
         return '404'
 
