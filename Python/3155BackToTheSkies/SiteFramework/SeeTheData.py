@@ -30,29 +30,29 @@ app.layout = html.Div(children=[
         dbc.Row(children=[
             dbc.Col(children=[
                 createCard(cardTitle="Test Card", cardText="A test card's description.", cardButtonText="Button",
-                           cardLink="/")
+                           cardLink="/data_view")
             ], align="center"),
             dbc.Col(children=[
                 createCard(cardTitle="Test Card", cardText="A test card's description.", cardButtonText="Button",
-                           cardLink="/")
+                           cardLink="/data_view")
             ], align="center"),
             dbc.Col(children=[
                 createCard(cardTitle="Test Card", cardText="A test card's description.", cardButtonText="Button",
-                           cardLink="/")
+                           cardLink="/data_view")
             ], align="center")
         ], justify="around", style={"padding-bottom": "1rem"}),
         dbc.Row(children=[
             dbc.Col(children=[
                 createCard(cardTitle="Test Card", cardText="A test card's description.", cardButtonText="Button",
-                           cardLink="/")
+                           cardLink="/data_view")
             ], align="center"),
             dbc.Col(children=[
                 createCard(cardTitle="Test Card", cardText="A test card's description.", cardButtonText="Button",
-                           cardLink="/")
+                           cardLink="/data_view")
             ], align="center"),
             dbc.Col(children=[
                 createCard(cardTitle="Test Card", cardText="A test card's description.", cardButtonText="Button",
-                           cardLink="/")
+                           cardLink="/data_view")
             ], align="center")
         ], justify="around", style={"padding-bottom": "1rem"})
     ])
