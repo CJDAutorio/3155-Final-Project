@@ -4,6 +4,7 @@ from dash.dependencies import Input, Output
 from app import app
 import Home as home
 import SeeTheData as seeTheData
+import DataView as dataView
 
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
@@ -16,6 +17,8 @@ app.layout = html.Div([
 def display_page(pathname):
     if pathname == '/':
         return home.getLayout()
+    elif pathname == '/see_the_data':
+        return seeTheData.getLayout()
     elif pathname == '/see_the_data':
         return seeTheData.getLayout()
     else:
