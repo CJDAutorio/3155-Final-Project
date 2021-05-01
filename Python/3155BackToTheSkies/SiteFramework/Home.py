@@ -46,6 +46,10 @@ app.layout = html.Div(children=[
 ], className="container-xl")
 
 
+def getLayout():
+    return app.layout
+
+
 # add callback for toggling the collapse on small screens
 @app.callback(
     Output("navbar-collapse", "is_open"),
