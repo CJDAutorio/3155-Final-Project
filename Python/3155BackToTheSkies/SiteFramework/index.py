@@ -6,6 +6,7 @@ import Home as home
 import SeeTheData as seeTheData
 import DataView as dataView
 import ChartsMega as chm
+import PointToPoint as p2p
 
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
@@ -32,6 +33,9 @@ def display_page(pathname):
         return dataView.getLayout5()
     elif pathname == '/data_view6':
         return dataView.getLayout6()
+    elif pathname == '/p2p':
+        return p2p.getLayout()
+
 
 
 
