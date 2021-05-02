@@ -32,6 +32,7 @@ state_codes = {
     'Nevada': 'NV', 'Maine': 'ME'}
 
 states = list(state_codes.values())  # creates list from dict
+states.sort()  # Sorts the values of states
 line_data = data_usa_cases  # creates date frame
 line_data['submission_date'] = pd.to_datetime(line_data['submission_date'])  # changes data type of date value
 line_data = line_data[line_data['state'] == 'FL']  # sets default line data
@@ -49,7 +50,7 @@ app.layout = html.Div(children=[
             dcc.Dropdown(
                 id='select-country',
                 options=[
-                    {'label': state, 'value': state} for state in state_codes.values()
+                    {'label': state, 'value': state} for state in states
                 ],
                 value=list(state_codes.values())[0]
             ),
