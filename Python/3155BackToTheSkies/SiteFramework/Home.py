@@ -25,7 +25,8 @@ app.layout = html.Div(children=[
                 html.P("Back to the Skies helps society slowly return to normalcy while staying as safe as possible "
                        "during this global pandemic by providing data on vaccinations in most possible travel "
                        "destinations. We hope to help promote airline travel to customers by providing an additional "
-                       "sense of safety through comparative data.")
+                       "sense of safety through comparative data. Now with FlySafe USA, just enter the state you plan "
+                       "on fly to  and let us do the rest of the work")
             ])
         ]),
         # Graph preview description
@@ -34,12 +35,19 @@ app.layout = html.Div(children=[
                                        html.P("PLACEHOLDER FOR GRAPH PREVIEW", style={"color": "#000000", "font-size": "4rem"})
                                        ], style={"height": "300px", "width": "500px"}), width=6),
             dbc.Col(html.Div(children=[
-                html.H3("Description of Graphs"),
+                html.H3("Travel Advisory Updates"),
                 html.P(
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut "
-                    "labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra "
-                    "maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-                    "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+                    "The COVID-19 pandemic continues to pose unprecedented risks to travelers. In light of those risks,"
+                    " the Department of State strongly recommends U.S. citizens reconsider all travel abroad.\n "
+                    "As travelers face ongoing risks due to the COVID-19 pandemic, the Department of State will begin "
+                    "updating its Travel Advisories this week to better reflect the Centers for Disease Control and "
+                    "Prevention’s (CDC) science-based Travel Health Notices that outline current issues affecting "
+                    "travelers’ health. Our Advisories also take into account logistical factors, including in-country "
+                    "testing availability and current travel restrictions for U.S. citizens. \n"
+                    "This update will result in a significant increase in the number of countries at Level 4: Do Not "
+                    "ravel, to approximately 80% of countries worldwide. This does not imply a reassessment of the "
+                    "current health situation in a given country, but rather reflects an adjustment in the State "
+                    "Department’s Travel Advisory system to rely more on CDC’s existing epidemiological assessments.")
             ]), width=6)
         ])
     ], className="container-fluid")
