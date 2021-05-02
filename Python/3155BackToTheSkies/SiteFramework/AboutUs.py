@@ -42,7 +42,7 @@ app.layout = html.Div(children=[
                 createCard(name="CJ D'Autorio", imageLink="./assets/cj.jpg", contList=["Website Layout", "Sketches", "Website Theme and Functionality"])
             ]),
             dbc.Col(children=[
-                createCard(name="Eric Lynch")
+                createCard(name="Eric Lynch", imageLink="./assets/Eric.jpg", contList=["Website Page Contents", "Sketches", "Presentation and Demo", "Sketches"])
             ]),
         ], className="container-fluid")
     ])
