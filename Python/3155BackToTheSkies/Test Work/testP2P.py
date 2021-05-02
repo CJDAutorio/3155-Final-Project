@@ -26,11 +26,14 @@ state_codes = {
     'North Carolina': 'NC', 'New York': 'NY', 'Texas': 'TX',
     'Nevada': 'NV', 'Maine': 'ME'}
 
+state_codes2 = {
+    'DC': 'District of Columbia'}
+
 states = list(state_codes.values())
 line_data = data_usa_cases
 line_data['submission_date'] = pd.to_datetime(line_data['submission_date'])
 line_data = line_data[line_data['state'] == 'FL']
-line_data = line_data.sort_values(by=['submission_date'], ascending=[False]).head(10)
+line_data = line_data.sort_values(by=['submission_date'], ascending=[False]).head(30)
 line_datachart = [go.Scatter(x=line_data['submission_date'], y=line_data['new_case'], mode='lines', name='Death')]
 
 app.layout = html.Div(children=[
@@ -40,12 +43,12 @@ app.layout = html.Div(children=[
                 'color': '#ef3e18'
             }
             ),
-    html.Div('Please select a continent', style={'color': '#ef3e18', 'margin': '10px'}),
+    html.Div('Please select a US State', style={'color': '#ef3e18', 'margin': '10px'}),
     dcc.Graph(id='graph1'),
     dcc.Dropdown(
         id='select-country',
         options=[
-            {'label': state, 'value': state} for state in state_codes.values()
+            {'label': state.translate(state_codes2), 'value': state} for state in state_codes.values()
         ],
         value=list(state_codes.values())[0]
     ),
@@ -58,7 +61,7 @@ def update_figure(select_state):
     nline_data = data_usa_cases
     nline_data['submission_date'] = pd.to_datetime(nline_data['submission_date'])
     nline_data = nline_data[nline_data['state'] == select_state]
-    nline_data = nline_data.sort_values(by=['submission_date'], ascending=[False]).head(10)
+    nline_data = nline_data.sort_values(by=['submission_date'], ascending=[False]).head(30)
 
     new_line_data = [go.Scatter(x=nline_data['submission_date'], y=nline_data['new_case'], mode='lines', name='Death')]
 
