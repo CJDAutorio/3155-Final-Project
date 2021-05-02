@@ -5,6 +5,7 @@ from app import app
 import Home as home
 import SeeTheData as seeTheData
 import DataView as dataView
+import AboutUs as aboutUs
 
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
@@ -21,6 +22,8 @@ def display_page(pathname):
         return seeTheData.getLayout()
     elif pathname == '/data_view':
         return dataView.getLayout()
+    elif pathname == '/about_us':
+        return aboutUs.getLayout()
     else:
         return '404'
 
