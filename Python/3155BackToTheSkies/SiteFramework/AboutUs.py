@@ -33,7 +33,7 @@ app.layout = html.Div(children=[
     html.Div(children=[
         dbc.Row(children=[
             dbc.Col(children=[
-                createCard(name="Ben McDonald")
+                createCard(name="Ben McDonald", imageLink="./assets/BenM.jpg", contList=["Product Cotriver", "Dataset Collection", "Report Compilation"])
             ]),
             dbc.Col(children=[
                 createCard(name="Ben Power", imageLink="./assets/Benp.jpg", contList=["Website Development", "Data Visualization", "Python Development"])
