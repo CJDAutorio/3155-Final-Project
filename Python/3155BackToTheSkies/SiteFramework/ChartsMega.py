@@ -13,7 +13,7 @@ data_vax_usaDist = pd.read_csv('../Datasets/COVID-19_Vaccine_Distribution_Alloca
 
 # Dictionary to translate state names for choropleth maps
 state_codes = {
-    'District of Columbia': 'dc', 'Mississippi': 'MS', 'Oklahoma': 'OK',
+    'District of Columbia': 'DC', 'Mississippi': 'MS', 'Oklahoma': 'OK',
     'Delaware': 'DE', 'Minnesota': 'MN', 'Illinois': 'IL', 'Arkansas': 'AR',
     'New Mexico': 'NM', 'Indiana': 'IN', 'Maryland': 'MD', 'Louisiana': 'LA',
     'Idaho': 'ID', 'Wyoming': 'WY', 'Tennessee': 'TN', 'Arizona': 'AZ',
