@@ -20,9 +20,9 @@ def createCard(name="Placeholder", imageLink="https://via.placeholder.com/69",
         dbc.CardImg(src=imageLink),
         dbc.CardBody(children=[
             html.H5("Contribution:"),
-            html.Ul(children=contListHTML)
+            html.Ul(children=contListHTML, className="card-text")
         ])
-    ])
+    ], style={"width": "15rem"})
     return card
 
 
