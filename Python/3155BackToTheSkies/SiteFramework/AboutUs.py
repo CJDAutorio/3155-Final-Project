@@ -16,32 +16,8 @@ app.layout = html.Div(children=[
     header.getHeader(),
     # Body
     html.Div(children=[
-        # Jumbotron
-        dbc.Row(children=[
-            dbc.Jumbotron(children=[
-                html.H2("Back to the Skies"),
-                html.P("A solution for safer travelling during the COVID-19 Pandemic.", className="lead"),
-                html.Hr(className="my-2"),
-                html.P("Back to the Skies helps society slowly return to normalcy while staying as safe as possible "
-                       "during this global pandemic by providing data on vaccinations in most possible travel "
-                       "destinations. We hope to help promote airline travel to customers by providing an additional "
-                       "sense of safety through comparative data.")
-            ])
-        ]),
-        # Graph preview description
-        dbc.Row(children=[
-            dbc.Col(html.Div(children=[html.Img(src="https://via.placeholder.com/69"),
-                                       html.P("PLACEHOLDER FOR GRAPH PREVIEW", style={"color": "#000000", "font-size": "4rem"})
-                                       ], style={"height": "300px", "width": "500px"}), width=6),
-            dbc.Col(html.Div(children=[
-                html.H3("Description of Graphs"),
-                html.P(
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut "
-                    "labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra "
-                    "maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-                    "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
-            ]), width=6)
-        ])
+        # Group information
+
     ], className="container-fluid")
 ], className="container-xl")
 
