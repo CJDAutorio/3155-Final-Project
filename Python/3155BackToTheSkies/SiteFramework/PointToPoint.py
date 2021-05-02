@@ -40,11 +40,7 @@ app.layout = html.Div(children=[
     header.getHeader(),
     dbc.Row(children=[
         dbc.Col(children=[
-            html.P(
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut "
-                "labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra "
-                "maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-                "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
+            html.H5("Select a State"),
             dcc.Dropdown(
                 id='select-country',
                 options=[
@@ -52,10 +48,17 @@ app.layout = html.Div(children=[
                 ],
                 value=list(state_codes.values())[0]
             ),
-        ], style={"width": "1"}),
+        ], width=2, align="center", style={"padding-bottom": "3rem"}),
         dbc.Col(children=[
             dcc.Graph(id='graph1'),
         ]),
+    ], style={"padding-bottom": "3rem"}),
+    dbc.Row(children=[
+        html.P(
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut "
+            "labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra "
+            "maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
+            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
     ])
 ], className="container-xl", )
 
