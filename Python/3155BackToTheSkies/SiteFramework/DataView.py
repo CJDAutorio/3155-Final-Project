@@ -16,8 +16,11 @@ app.layout1 = html.Div(children=[
     ], justify="center", style={"padding-bottom": "5%"}),
     dbc.Row(children=[
         html.P(
-            "   The bar chart shown above displays the top 10 countries with the highest vaccination rate per capita around the world. "
-            "Thus, with this data these countries can be considered some of the safest countries to travel to during this pandemic. " )
+            "As vaccines continue to be distributed around the world and more of the population becomes vaccinated the risk of "
+            "contracting and spreading Covid-19 will decrease, and the safer it will be to return to a state of normalcy. "
+            "Covid-19's herd immunity threshold level is not yet known, however, most estimates have placed the threshold at 60% to 70%. "
+            "The above bar chart displays the top 10 countries with the highest vaccination rates per capita around the world. "
+            "Thus, with this data these countries can currently be considered some of the safest places to travel to.")
     ])
 ], className="container-xl", )
 
@@ -28,8 +31,11 @@ app.layout2 = html.Div(children=[
     ], justify="center", style={"padding-bottom": "5%"}),
     dbc.Row(children=[
         html.P(
-            "The bar chart shown above displays the top 10 countries with the lowest vaccination rate per capita around the world. "
-            "Thus, with this data these countries can be considered some of the worst and most dangerous countries to travel to during this pandemic. " )
+            "The lower the percentage of vaccinated citizens within a population, the more at risk one would be for contracting Covid-19. "
+            "This viral disease can spread between people, mainly through close contact, and those infected rarely show symptoms right away. "
+            "Consequently, the infected may be spreading the disease without ever being aware that they contracted it themselves. "
+            "The bar chart shown above displays the top 10 countries with the lowest vaccination rates per capita around the world. "
+            "Thus, with this data, these countries can be considered some of the worst and most dangerous countries to travel to during the pandemic. " )
     ])
 ], className="container-xl", )
 
@@ -40,8 +46,12 @@ app.layout3 = html.Div(children=[
     ], justify="center", style={"padding-bottom": "5%"}),
     dbc.Row(children=[
         html.P(
-            "The stacked bar chart shown above displays how much of a population is completely unvaccinated, partially vaccinated, or fully vaccinated"
-            "within the top 10 most traveled to business locations of the world.")
+            "Business travelers account for about 12% of all airline passengers and can account for up to 75% of airline profits. "
+            "Additionally, some businesses must continue to operate throughout the Covid-19 pandemic and would like employees to be "
+            "able to travel as soon as current local restrictions would allow them to. If you are planning on traveling for business, "
+            "be sure to give our Covid-19 procedures page a view to see the procedures for some of the most popular airline companies. "
+            "The stacked bar chart shown above displays how much of a population is completely unvaccinated, partially vaccinated, or "
+            "fully vaccinated within the top 10 most traveled to business locations of the world.")
     ])
 ], className="container-xl", )
 
