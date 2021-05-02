@@ -18,7 +18,7 @@ app.layout1 = html.Div(children=[
                 "labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra "
                 "maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
                 "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
-        ], style={"width": "1"}),
+        ], width=4),
         dbc.Col(children=[
             dcc.Graph(figure=chm.bar1_most_vax())
         ]),
@@ -34,7 +34,7 @@ app.layout2 = html.Div(children=[
                 "labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra "
                 "maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
                 "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
-        ], style={"width": "1"}),
+        ], width=4),
         dbc.Col(children=[
             dcc.Graph(figure=chm.bar2_least_vax())
         ]),
@@ -50,7 +50,7 @@ app.layout3 = html.Div(children=[
                 "labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra "
                 "maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
                 "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
-        ], style={"width": "1"}),
+        ], width=4),
         dbc.Col(children=[
             dcc.Graph(figure=chm.sbar1_most_bizz())
         ]),
@@ -66,7 +66,7 @@ app.layout4 = html.Div(children=[
                 "labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra "
                 "maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
                 "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
-        ], style={"width": "1"}),
+        ], width=4),
         dbc.Col(children=[
             dcc.Graph(figure=chm.sbar2_most_tour())
         ]),
@@ -82,7 +82,7 @@ app.layout5 = html.Div(children=[
                 "labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra "
                 "maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
                 "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
-        ], style={"width": "1"}),
+        ], width=4),
         dbc.Col(children=[
             dcc.Graph(figure=chm.choropleth1_USA())
         ]),
@@ -98,7 +98,7 @@ app.layout6 = html.Div(children=[
                 "labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra "
                 "maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
                 "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
-        ], style={"width": "1"}),
+        ], width=4),
         dbc.Col(children=[
             dcc.Graph(figure=chm.choropleth1_USA())
         ]),
