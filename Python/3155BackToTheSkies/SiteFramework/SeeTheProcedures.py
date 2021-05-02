@@ -35,8 +35,8 @@ app.layout = html.Div(children=[
                 createCard(cardTitle="American Airlines", cardText="Covid-19 Procedures",
                            cardButtonText="Button",
                            cardLink="https://www.aa.com/homePage.do",
-                           cardImage="./assets/pexels-karolina-grabowska-4047186.jpg",
-                           cardSubtitle="Photo by Karolina Grabowska from Pexels")
+                           cardImage="./assets/American.jpg",
+                           cardSubtitle="Photo from The Verge")
             ], align="center", width=4),
             dbc.Col(children=[
                 createCard(cardTitle="United Airlines",
