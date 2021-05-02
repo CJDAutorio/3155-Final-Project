@@ -66,7 +66,7 @@ app.layout = html.Div(children=[
             " fully vaccinated by Johnson & Johnson’s single-dose vaccine or the two-dose series made by "
             "Pfizer-BioNTech and Moderna.\n"
             "Providers are administering about 2.55 million doses per day on average, about a 25 percent decrease"
-            "from the peak of 3.38 million reported on April 13.)")
+            "from the peak of 3.38 million reported on April 13.")
     ])
 ], className="container-xl", )
 
