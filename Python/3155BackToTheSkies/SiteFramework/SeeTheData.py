@@ -29,31 +29,31 @@ app.layout = html.Div(children=[
     html.Div(children=[
         dbc.Row(children=[
             dbc.Col(children=[
-                createCard(cardTitle="Test Card", cardText="A test card's description.", cardButtonText="Button",
-                           cardLink="/data_view")
-            ], align="center"),
+                createCard(cardTitle="Top Countries by Vaccinations per Capita", cardText="A test card's description.", cardButtonText="Button",
+                           cardLink="/data_view1")
+            ], align="center", width=4),
             dbc.Col(children=[
-                createCard(cardTitle="Test Card", cardText="A test card's description.", cardButtonText="Button",
-                           cardLink="/data_view")
-            ], align="center"),
+                createCard(cardTitle="Worst Countries by Vaccinations per Capita", cardText="A test card's description.", cardButtonText="Button",
+                           cardLink="/data_view2")
+            ], align="center", width=4),
             dbc.Col(children=[
-                createCard(cardTitle="Test Card", cardText="A test card's description.", cardButtonText="Button",
-                           cardLink="/data_view")
-            ], align="center")
+                createCard(cardTitle="Vaccination Data on Top Business Locations", cardText="A test card's description.", cardButtonText="Button",
+                           cardLink="/data_view3")
+            ], align="center", width=4)
         ], justify="around", style={"padding-bottom": "1rem"}),
         dbc.Row(children=[
             dbc.Col(children=[
-                createCard(cardTitle="Test Card", cardText="A test card's description.", cardButtonText="Button",
-                           cardLink="/data_view")
-            ], align="center"),
+                createCard(cardTitle="Vaccination Data on Top Vacation Locations", cardText="A test card's description.", cardButtonText="Button",
+                           cardLink="/data_view4")
+            ], align="center", width=4),
             dbc.Col(children=[
-                createCard(cardTitle="Test Card", cardText="A test card's description.", cardButtonText="Button",
-                           cardLink="/data_view")
-            ], align="center"),
+                createCard(cardTitle="Vaccine Allocation by State", cardText="A test card's description.", cardButtonText="Button",
+                           cardLink="/data_view5")
+            ], align="center", width=4),
             dbc.Col(children=[
-                createCard(cardTitle="Test Card", cardText="A test card's description.", cardButtonText="Button",
-                           cardLink="/data_view")
-            ], align="center")
+                createCard(cardTitle="COVID-19 Procedures", cardText="A test card's description.", cardButtonText="Button",
+                           cardLink="/data_view6")
+            ], align="center", width=4)
         ], justify="around", style={"padding-bottom": "1rem"})
     ])
 ], className="container-xl")

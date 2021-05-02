@@ -5,6 +5,9 @@ from app import app
 import Home as home
 import SeeTheData as seeTheData
 import DataView as dataView
+import ChartsMega as chm
+import PointToPoint as p2p
+import AboutUs as aboutUs
 
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
@@ -19,10 +22,28 @@ def display_page(pathname):
         return home.getLayout()
     elif pathname == '/see_the_data':
         return seeTheData.getLayout()
-    elif pathname == '/data_view':
-        return dataView.getLayout()
-    else:
-        return '404'
+    elif pathname == '/about_us':
+        return aboutUs.getLayout()
+    elif pathname == '/data_view1':
+        return dataView.getLayout1()
+    elif pathname == '/data_view2':
+        return dataView.getLayout2()
+    elif pathname == '/data_view3':
+        return dataView.getLayout3()
+    elif pathname == '/data_view4':
+        return dataView.getLayout4()
+    elif pathname == '/data_view5':
+        return dataView.getLayout5()
+    elif pathname == '/data_view6':
+        return dataView.getLayout6()
+    elif pathname == '/p2p':
+        return p2p.getLayout()
+
+
+@app.callback(Output('graph1', 'figure'),
+              [Input('select-country', 'value')])
+def update_figure(select_state):
+    return p2p.update_figure(select_state)
 
 
 if __name__ == '__main__':
