@@ -44,7 +44,7 @@ def bar1_most_vax():
     # Sets the X axis to counties and the y axis to % vaccinated
     graph_most_vax = [go.Bar(x=data_most_vax['COUNTRY'], y=(data_most_vax['TOTAL_VACCINATIONS_PER100'] / 100))]
     # Sets the layout of the figure
-    layout_most_vax = go.Layout(title="Highest Vaccinations Per 100", title_font_size=24, xaxis_title="Country",
+    layout_most_vax = go.Layout(title="Top Countries by Vaccinations per Capita", title_font_size=24, xaxis_title="Country",
                                 yaxis_title="Percentage Vaccinated")
 
     # --- Plot the figure and return it ---
@@ -68,7 +68,7 @@ def bar2_least_vax():
     # Sets the X axis to counties and the y axis to % vaccinated
     graph_least_vax = [go.Bar(x=data_least_vax['COUNTRY'], y=(data_least_vax['TOTAL_VACCINATIONS_PER100'] / 100))]
     # Sets the layout of the figure
-    layout_least_vax = go.Layout(title="Lowest Vaccinations Per 100", title_font_size=24, xaxis_title="Country",
+    layout_least_vax = go.Layout(title="Worst Countries by Vaccinations per Capita", title_font_size=24, xaxis_title="Country",
                                  yaxis_title="Percentage Vaccinated")
 
     # --- Plot the figure and return it ---
@@ -105,15 +105,15 @@ def sbar1_most_bizz():
 
     # --- Preparing data and layout ---
     # 3 trace's used for each stacking level of the bar chart
-    trace1 = go.Bar(x=data_most_bizz['COUNTRY'], y=data_most_bizz['NoVax'], name='No Vax')
+    trace1 = go.Bar(x=data_most_bizz['COUNTRY'], y=data_most_bizz['NoVax'], name='Unvaccinated')
     trace2 = go.Bar(x=data_most_bizz['COUNTRY'],
                     y=(data_most_bizz['PERSONS_VACCINATED_1PLUS_DOSE'] - data_most_bizz['FullVax']),
-                    name='Partial Vax')
-    trace3 = go.Bar(x=data_most_bizz['COUNTRY'], y=data_most_bizz['FullVax'], name='Full Vax')
+                    name='Partially Vaccinated')
+    trace3 = go.Bar(x=data_most_bizz['COUNTRY'], y=data_most_bizz['FullVax'], name='Fully Vaccinated')
     # sets data for graph
     graph_most_bizz = [trace1, trace2, trace3]
     # sets layout for graph
-    lay = go.Layout(title='Title Here',
+    lay = go.Layout(title='Vaccination Data on the Top 10 Most Traveled to Business Locations',
                     xaxis={'title': 'Country'},
                     yaxis={'title': 'Population'}, barmode='stack')
 
@@ -151,15 +151,15 @@ def sbar2_most_tour():
 
     # --- Preparing data and layout ---
     # 3 trace's used for each stacking level of the bar chart
-    trace1 = go.Bar(x=data_most_tourism['COUNTRY'], y=data_most_tourism['NoVax'], name='No Vax')
+    trace1 = go.Bar(x=data_most_tourism['COUNTRY'], y=data_most_tourism['NoVax'], name='Unvaccinated')
     trace2 = go.Bar(x=data_most_tourism['COUNTRY'],
                     y=(data_most_tourism['PERSONS_VACCINATED_1PLUS_DOSE'] - data_most_tourism['FullVax']),
-                    name='Partial Vax')
-    trace3 = go.Bar(x=data_most_tourism['COUNTRY'], y=data_most_tourism['FullVax'], name='Full Vax')
+                    name='Partially Vaccinated')
+    trace3 = go.Bar(x=data_most_tourism['COUNTRY'], y=data_most_tourism['FullVax'], name='Fully Vaccinated')
     # sets data for graph
     graph_most_tourism = [trace1, trace2, trace3]
     # sets layout for graph
-    lay = go.Layout(title='Title Here',
+    lay = go.Layout(title='Vaccination Data on the Top 10 Most Traveled to Vacation Locations',
                     xaxis={'title': 'Country'},
                     yaxis={'title': 'Population'}, barmode='stack')
 

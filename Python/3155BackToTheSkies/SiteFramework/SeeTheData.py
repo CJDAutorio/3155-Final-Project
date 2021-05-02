@@ -29,30 +29,30 @@ app.layout = html.Div(children=[
     html.Div(children=[
         dbc.Row(children=[
             dbc.Col(children=[
-                createCard(cardTitle="Test Card", cardText="A test card's description.", cardButtonText="Button",
-                           cardLink="/data_view")
+                createCard(cardTitle="Test Bar 1", cardText="A test card's description.", cardButtonText="Button",
+                           cardLink="/data_view1")
             ], align="center"),
             dbc.Col(children=[
                 createCard(cardTitle="Test Card", cardText="A test card's description.", cardButtonText="Button",
-                           cardLink="/data_view")
+                           cardLink="/data_view2")
             ], align="center"),
             dbc.Col(children=[
                 createCard(cardTitle="Test Card", cardText="A test card's description.", cardButtonText="Button",
-                           cardLink="/data_view")
+                           cardLink="/data_view3")
             ], align="center")
         ], justify="around", style={"padding-bottom": "1rem"}),
         dbc.Row(children=[
             dbc.Col(children=[
                 createCard(cardTitle="Test Card", cardText="A test card's description.", cardButtonText="Button",
-                           cardLink="/data_view")
+                           cardLink="/data_view4")
             ], align="center"),
             dbc.Col(children=[
                 createCard(cardTitle="Test Card", cardText="A test card's description.", cardButtonText="Button",
-                           cardLink="/data_view")
+                           cardLink="/data_view5")
             ], align="center"),
             dbc.Col(children=[
                 createCard(cardTitle="Test Card", cardText="A test card's description.", cardButtonText="Button",
-                           cardLink="/data_view")
+                           cardLink="/data_view6")
             ], align="center")
         ], justify="around", style={"padding-bottom": "1rem"})
     ])

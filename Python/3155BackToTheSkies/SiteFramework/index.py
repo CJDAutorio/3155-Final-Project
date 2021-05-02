@@ -5,7 +5,7 @@ from app import app
 import Home as home
 import SeeTheData as seeTheData
 import DataView as dataView
-import AboutUs as aboutUs
+import ChartsMega as chm
 
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
@@ -20,12 +20,19 @@ def display_page(pathname):
         return home.getLayout()
     elif pathname == '/see_the_data':
         return seeTheData.getLayout()
-    elif pathname == '/data_view':
-        return dataView.getLayout()
-    elif pathname == '/about_us':
-        return aboutUs.getLayout()
-    else:
-        return '404'
+    elif pathname == '/data_view1':
+        return dataView.getLayout1()
+    elif pathname == '/data_view2':
+        return dataView.getLayout2()
+    elif pathname == '/data_view3':
+        return dataView.getLayout3()
+    elif pathname == '/data_view4':
+        return dataView.getLayout4()
+    elif pathname == '/data_view5':
+        return dataView.getLayout5()
+    elif pathname == '/data_view6':
+        return dataView.getLayout6()
+
 
 
 if __name__ == '__main__':
