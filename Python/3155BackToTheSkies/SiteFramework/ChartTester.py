@@ -38,6 +38,7 @@ sidebar = html.Div(
                 dbc.NavLink("Test Stacked Bar3", href="/page-2", active="exact"),
                 dbc.NavLink("Test Stacked Bar4", href="/page-3", active="exact"),
                 dbc.NavLink("Test Map", href="/page-4", active="exact"),
+                dbc.NavLink("Test Map", href="/page-5", active="exact"),
             ],
             vertical=True,
             pills=True,
@@ -63,6 +64,8 @@ def render_page_content(pathname):
     elif pathname == "/page-3":
         return dcc.Graph(figure=chm.sbar2_most_tour())
     elif pathname == "/page-4":
+        return dcc.Graph(figure=chm.choropleth1_USA())
+    elif pathname == "/page-5":
         return dcc.Graph(figure=chm.choropleth1_USA())
 
 
