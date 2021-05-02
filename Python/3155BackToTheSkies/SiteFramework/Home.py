@@ -25,7 +25,8 @@ app.layout = html.Div(children=[
                 html.P("Back to the Skies helps society slowly return to normalcy while staying as safe as possible "
                        "during this global pandemic by providing data on vaccinations in most possible travel "
                        "destinations. We hope to help promote airline travel to customers by providing an additional "
-                       "sense of safety through comparative data.")
+                       "sense of safety through comparative data. Now with FlySafe USA, just enter the state you plan "
+                       "on fly to  and let us do the rest of the work")
             ])
         ]),
         # Graph preview description
