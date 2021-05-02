@@ -28,7 +28,7 @@ def getHeader(title="Back to the Skies", subTitle="COVID-19 Vaccination Data for
                 dbc.NavLink("Point to Point", href="/", style={"padding-left": "10px", "padding-right": "10px"})),
             dbc.NavItem(dbc.NavLink("See the Data", href="/see_the_data",
                                     style={"padding-left": "10px", "padding-right": "10px"})),
-            dbc.NavItem(dbc.NavLink("About Us", href="/", style={"padding-left": "10px", "padding-right": "10px"}))
+            dbc.NavItem(dbc.NavLink("About Us", href="about_us", style={"padding-left": "10px", "padding-right": "10px"}))
         ],
             brand="Back to the Skies",
             brand_href="/",
