@@ -9,7 +9,6 @@ import ChartsMega as chm
 import PointToPoint as p2p
 import AboutUs as aboutUs
 
-
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
     html.Div(id='page-content')
@@ -41,6 +40,10 @@ def display_page(pathname):
         return p2p.getLayout()
 
 
+@app.callback(Output('graph1', 'figure'),
+              [Input('select-country', 'value')])
+def update_figure(select_state):
+    return p2p.update_figure(select_state)
 
 
 if __name__ == '__main__':

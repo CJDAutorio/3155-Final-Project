@@ -60,8 +60,8 @@ app.layout = html.Div(children=[
 ], className="container-xl", )
 
 
-@app.callback(Output('graph1', 'figure'),
-              [Input('select-country', 'value')])
+# @app.callback(Output('graph1', 'figure'),
+#               [Input('select-country', 'value')])
 def update_figure(select_state):
     nline_data = data_usa_cases
     nline_data['submission_date'] = pd.to_datetime(nline_data['submission_date'])
