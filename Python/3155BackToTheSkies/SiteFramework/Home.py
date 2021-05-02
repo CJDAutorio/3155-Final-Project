@@ -31,9 +31,6 @@ app.layout = html.Div(children=[
         ]),
         # Graph preview description
         dbc.Row(children=[
-            dbc.Col(html.Div(children=[html.Img(src="https://via.placeholder.com/69"),
-                                       html.P("PLACEHOLDER FOR GRAPH PREVIEW", style={"color": "#000000", "font-size": "4rem"})
-                                       ], style={"height": "300px", "width": "500px"}), width=6),
             dbc.Col(html.Div(children=[
                 html.H3("Travel Advisory Updates"),
                 html.P(
@@ -48,7 +45,7 @@ app.layout = html.Div(children=[
                     "ravel, to approximately 80% of countries worldwide. This does not imply a reassessment of the "
                     "current health situation in a given country, but rather reflects an adjustment in the State "
                     "Department’s Travel Advisory system to rely more on CDC’s existing epidemiological assessments.")
-            ]), width=6)
+            ]), width=12)
         ])
     ], className="container-fluid")
 ], className="container-xl")

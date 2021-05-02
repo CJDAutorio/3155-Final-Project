@@ -32,22 +32,22 @@ app.layout = html.Div(children=[
     html.Div(children=[
         dbc.Row(children=[
             dbc.Col(children=[
-                createCard(cardTitle="American Airlines", cardText="The safest places to vist ",
+                createCard(cardTitle="American Airlines", cardText="Covid-19 Procedures",
                            cardButtonText="Button",
                            cardLink="https://www.aa.com/homePage.do",
-                           cardImage="./assets/pexels-karolina-grabowska-4047186.jpg",
-                           cardSubtitle="Photo by Karolina Grabowska from Pexels")
+                           cardImage="./assets/American.jpg",
+                           cardSubtitle="Photo from The Verge")
             ], align="center", width=4),
             dbc.Col(children=[
-                createCard(cardTitle="American Airlines",
-                           cardText="Is it time to cancel your ticket?", cardButtonText="Button",
+                createCard(cardTitle="United Airlines",
+                           cardText="Covid-19 Procedures", cardButtonText="Button",
                            cardLink="/data_view2",
                            cardImage="./assets/pexels-pavel-danilyuk.jpg",
                            cardSubtitle="Photo by Pavel Danilyuk from Pexels")
             ], align="center", width=4),
             dbc.Col(children=[
-                createCard(cardTitle="American Airlines",
-                           cardText="Is it safe to do business overseas?", cardButtonText="Button",
+                createCard(cardTitle="Southwest Airlines",
+                           cardText="Covid-19 Procedures", cardButtonText="Button",
                            cardLink="/data_view3",
                            cardImage="./assets/pexels-edmond-dantès-4342493.jpg",
                            cardSubtitle="Photo by Edmond Dantès from Pexels"),
@@ -55,21 +55,21 @@ app.layout = html.Div(children=[
         ], justify="around", style={"padding-bottom": "1rem"}),
         dbc.Row(children=[
             dbc.Col(children=[
-                createCard(cardTitle="American Airlines",
-                           cardText="It's time to take the family back out!", cardButtonText="Button",
+                createCard(cardTitle="Frontier Airlines",
+                           cardText="Covid-19 Procedures", cardButtonText="Button",
                            cardLink="/data_view4",
                            cardImage="./assets/pexels-jaxson-bryden-2040627.jpg",
                            cardSubtitle="Photo by Jaxson Bryden from Pexels")
             ], align="center", width=4),
             dbc.Col(children=[
-                createCard(cardTitle="American Airlinese", cardText="Where in the USA is it the safest?",
+                createCard(cardTitle="Delta Airlines", cardText="Covid-19 Procedures",
                            cardButtonText="Button",
                            cardLink="/data_view5",
                            cardImage="./assets/pexels-cdc-3992931.jpg",
                            cardSubtitle="Photo by CDC from Pexels")
             ], align="center", width=4),
             dbc.Col(children=[
-                createCard(cardTitle="American Airlines", cardText="How we are keeping you safe in the skies!",
+                createCard(cardTitle="Spirit Airlines", cardText="Covid-19 Procedures",
                            cardButtonText="Button",
                            cardLink="/data_view6",
                            cardImage="./assets/pexels-august-de-richelieu-4261252.jpg",
