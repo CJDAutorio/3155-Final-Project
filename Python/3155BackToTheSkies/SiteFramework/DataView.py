@@ -9,8 +9,9 @@ external_stylesheets = ["../assets/bootstrap.min.css"]
 app = dash.Dash(name=__name__, external_stylesheets=external_stylesheets)
 
 # Sidebar for quickly changing graph type
-sideBar = html.Div(children=[
+sideBar = dbc.Card(children=[
     html.H3("Graph Types"),
+    html.H6("Change the type of graph"),
     # Changes graph data
     dbc.Nav(children=[
         dbc.NavItem(dbc.NavLink("Graph Type", href="/graph1"), active="exact"),
@@ -26,14 +27,14 @@ sideBar = html.Div(children=[
 # Actual graph content
 content = html.Div(children=[
 
-], className="container-fluid", style={"background-color": "#000000"})
+], className="container-fluid", style={"background-color": "#000000", "height": "100%"})
 
 app.layout = html.Div(children=[
     header.getHeader(),
     dbc.Row(children=[
         dbc.Col(children=[
             sideBar
-        ], style={"width": "2"}),
+        ], width=3),
         dbc.Col(children=[
             content
         ]),
