@@ -8,6 +8,7 @@ import DataView as dataView
 import ChartsMega as chm
 import PointToPoint as p2p
 import AboutUs as aboutUs
+import SeeTheProcedures as aboutCovid
 
 # displays every page on the site
 app.layout = html.Div([
@@ -36,7 +37,7 @@ def display_page(pathname):
     elif pathname == '/data_view5':
         return dataView.getLayout5()
     elif pathname == '/data_view6':
-        return dataView.getLayout6()
+        return aboutCovid.getLayout()
     elif pathname == '/p2p':
         return p2p.getLayout()
 
