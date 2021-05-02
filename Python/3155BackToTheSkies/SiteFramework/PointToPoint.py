@@ -55,7 +55,7 @@ app.layout = html.Div(children=[
         ], style={"width": "1"}),
         dbc.Col(children=[
             dcc.Graph(id='graph1'),
-        ], style={"background-color": "#000000", }),
+        ]),
     ])
 ], className="container-xl", )
 
