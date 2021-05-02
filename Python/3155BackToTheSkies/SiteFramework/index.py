@@ -25,6 +25,7 @@ def display_page(pathname):
     elif pathname == '/see_the_data':
         return seeTheData.getLayout()
     elif pathname == '/about_us':
+
         return aboutUs.getLayout()
     elif pathname == '/data_view1':
         return dataView.getLayout1()
