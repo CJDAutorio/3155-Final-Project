@@ -75,9 +75,11 @@ app.layout5 = html.Div(children=[
             "All adults in the U.S. are now eligible for a coronavirus vaccine. Vaccinations climbed to an average of"
             " more than 3.3 million shots per day before it began declining since then. The decline coincided with a"
             " pause in the use of the Johnson & Johnson coronavirus vaccine that began on on April 13 and lasted until"
-            " April 23, as federal health officials reviewed reports of a rare and severe type of blood clot. Resumption"
-            " of the J&J vaccine is seen as a key component of vaccine delivery because it requires only one dose instead"
-            " of two.\nLack of demand may also be contributing to the vaccine slowdown as adults who most want the shot "
+            " April 23, as federal health officials reviewed reports of a rare and severe type of blood clot. "
+            "Resumption "
+            "of the J&J vaccine is seen as a key component of vaccine delivery because it requires only one dose "
+            "instead "
+            "of two.\nLack of demand may also be contributing to the vaccine slowdown as adults who most want the shot "
             " have received it so the campaign must now reach out to more hesitant people.")
     ])
 ], className="container-xl", )
