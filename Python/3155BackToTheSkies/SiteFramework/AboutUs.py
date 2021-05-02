@@ -5,20 +5,47 @@ import dash_html_components as html
 from dash.dependencies import Input, Output, State
 import Header as header
 
-
 external_stylesheets = ["../assets/bootstrap.min.css"]
 app = dash.Dash(name=__name__, external_stylesheets=external_stylesheets)
 
 
-app.layout = html.Div(children=[
+def createCard(name="Placeholder", imageLink="https://via.placeholder.com/69",
+               contList=["Placeholder", "Placeholder", "Placeholder"], ):
+    contListHTML = []
+    for i in contList:
+        contListHTML.append(html.Li(i))
 
+    card = dbc.Card(children=[
+        dbc.CardHeader(html.H4(name)),
+        dbc.CardImg(src=imageLink),
+        dbc.CardBody(children=[
+            html.H5("Contribution:"),
+            html.Ul(children=contListHTML)
+        ])
+    ])
+    return card
+
+
+app.layout = html.Div(children=[
     # Header
     header.getHeader(),
     # Body
     html.Div(children=[
-        # Group information
-
-    ], className="container-fluid")
+        dbc.Row(children=[
+            dbc.Col(children=[
+                createCard(name="Ben McDonald")
+            ]),
+            dbc.Col(children=[
+                createCard(name="Ben Power")
+            ]),
+            dbc.Col(children=[
+                createCard(name="CJ D'Autorio", imageLink="./assets/cj.jpg", contList=["Website Layout", "Sketches", "Website Theme and Functionality"])
+            ]),
+            dbc.Col(children=[
+                createCard(name="Eric Lynch")
+            ]),
+        ], className="container-fluid")
+    ])
 ], className="container-xl")
 
 
