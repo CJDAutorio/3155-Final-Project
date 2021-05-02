@@ -5,10 +5,11 @@ import dash_html_components as html
 from dash.dependencies import Input, Output, State
 import Header as header
 
-external_stylesheets = ["../assets/bootstrap.min.css"]
+external_stylesheets = ["../assets/bootstrap.min.css"]  # css stylesheet
 app = dash.Dash(name=__name__, external_stylesheets=external_stylesheets)
 
 
+# card layout used for each data element on page
 def createCard(cardTitle, cardText, cardButtonText, cardWidth="3", cardImage="https://via.placeholder.com/69",
                cardColor="primary", cardLink="#"):
     card = dbc.Card(children=[
@@ -23,35 +24,42 @@ def createCard(cardTitle, cardText, cardButtonText, cardWidth="3", cardImage="ht
     return card
 
 
+# sets the layout of the page
 app.layout = html.Div(children=[
     header.getHeader(),
     #
     html.Div(children=[
         dbc.Row(children=[
             dbc.Col(children=[
-                createCard(cardTitle="Top Countries by Vaccinations per Capita", cardText="A test card's description.", cardButtonText="Button",
+                createCard(cardTitle="Top Countries by Vaccinations per Capita", cardText="A test card's description.",
+                           cardButtonText="Button",
                            cardLink="/data_view1")
             ], align="center", width=4),
             dbc.Col(children=[
-                createCard(cardTitle="Worst Countries by Vaccinations per Capita", cardText="A test card's description.", cardButtonText="Button",
+                createCard(cardTitle="Worst Countries by Vaccinations per Capita",
+                           cardText="A test card's description.", cardButtonText="Button",
                            cardLink="/data_view2")
             ], align="center", width=4),
             dbc.Col(children=[
-                createCard(cardTitle="Vaccination Data on Top Business Locations", cardText="A test card's description.", cardButtonText="Button",
+                createCard(cardTitle="Vaccination Data on Top Business Locations",
+                           cardText="A test card's description.", cardButtonText="Button",
                            cardLink="/data_view3")
             ], align="center", width=4)
         ], justify="around", style={"padding-bottom": "1rem"}),
         dbc.Row(children=[
             dbc.Col(children=[
-                createCard(cardTitle="Vaccination Data on Top Vacation Locations", cardText="A test card's description.", cardButtonText="Button",
+                createCard(cardTitle="Vaccination Data on Top Vacation Locations",
+                           cardText="A test card's description.", cardButtonText="Button",
                            cardLink="/data_view4")
             ], align="center", width=4),
             dbc.Col(children=[
-                createCard(cardTitle="Vaccine Allocation by State", cardText="A test card's description.", cardButtonText="Button",
+                createCard(cardTitle="Vaccine Allocation by State", cardText="A test card's description.",
+                           cardButtonText="Button",
                            cardLink="/data_view5")
             ], align="center", width=4),
             dbc.Col(children=[
-                createCard(cardTitle="COVID-19 Procedures", cardText="A test card's description.", cardButtonText="Button",
+                createCard(cardTitle="COVID-19 Procedures", cardText="A test card's description.",
+                           cardButtonText="Button",
                            cardLink="/data_view6")
             ], align="center", width=4)
         ], justify="around", style={"padding-bottom": "1rem"})
@@ -59,6 +67,7 @@ app.layout = html.Div(children=[
 ], className="container-xl")
 
 
+# returns the layout
 def getLayout():
     return app.layout
 
