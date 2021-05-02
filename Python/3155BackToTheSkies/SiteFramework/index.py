@@ -9,12 +9,13 @@ import ChartsMega as chm
 import PointToPoint as p2p
 import AboutUs as aboutUs
 
+# displays every page on the site
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
     html.Div(id='page-content')
 ])
 
-
+# runs a callback each time the url changes to bring up the new page
 @app.callback(Output('page-content', 'children'),
               Input('url', 'pathname'))
 def display_page(pathname):
@@ -39,7 +40,7 @@ def display_page(pathname):
     elif pathname == '/p2p':
         return p2p.getLayout()
 
-
+# runs a callback each time the state is changes on the p2p page
 @app.callback(Output('graph1', 'figure'),
               [Input('select-country', 'value')])
 def update_figure(select_state):
