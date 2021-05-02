@@ -33,47 +33,47 @@ app.layout = html.Div(children=[
         dbc.Row(children=[
             dbc.Col(children=[
                 createCard(cardTitle="American Airlines", cardText="Covid-19 Procedures",
-                           cardButtonText="Button",
-                           cardLink="https://www.aa.com/homePage.do",
+                           cardButtonText="View",
+                           cardLink="https://www.aa.com/i18n/travel-info/coronavirus-updates.jsp",
                            cardImage="./assets/American.jpg",
                            cardSubtitle="Photo from The Verge")
             ], align="center", width=4),
             dbc.Col(children=[
                 createCard(cardTitle="United Airlines",
-                           cardText="Covid-19 Procedures", cardButtonText="Button",
-                           cardLink="/data_view2",
-                           cardImage="./assets/pexels-pavel-danilyuk.jpg",
-                           cardSubtitle="Photo by Pavel Danilyuk from Pexels")
+                           cardText="Covid-19 Procedures", cardButtonText="View",
+                           cardLink="https://www.united.com/ual/en/us/fly/travel/what-to-expect.html",
+                           cardImage="./assets/United.jpg",
+                           cardSubtitle="Photo From United")
             ], align="center", width=4),
             dbc.Col(children=[
                 createCard(cardTitle="Southwest Airlines",
-                           cardText="Covid-19 Procedures", cardButtonText="Button",
-                           cardLink="/data_view3",
-                           cardImage="./assets/pexels-edmond-dantès-4342493.jpg",
-                           cardSubtitle="Photo by Edmond Dantès from Pexels"),
+                           cardText="Covid-19 Procedures", cardButtonText="View",
+                           cardLink="https://www.southwest.com/coronavirus/",
+                           cardImage="./assets/Southwest.jpg",
+                           cardSubtitle="Photo from Southwest"),
             ], align="center", width=4)
         ], justify="around", style={"padding-bottom": "1rem"}),
         dbc.Row(children=[
             dbc.Col(children=[
                 createCard(cardTitle="Frontier Airlines",
-                           cardText="Covid-19 Procedures", cardButtonText="Button",
-                           cardLink="/data_view4",
-                           cardImage="./assets/pexels-jaxson-bryden-2040627.jpg",
-                           cardSubtitle="Photo by Jaxson Bryden from Pexels")
+                           cardText="Covid-19 Procedures", cardButtonText="View",
+                           cardLink="https://www.flyfrontier.com/committed-to-you/?mobile=true",
+                           cardImage="./assets/Frontier.jpeg",
+                           cardSubtitle="Photo from flyfrontier")
             ], align="center", width=4),
             dbc.Col(children=[
                 createCard(cardTitle="Delta Airlines", cardText="Covid-19 Procedures",
-                           cardButtonText="Button",
-                           cardLink="/data_view5",
-                           cardImage="./assets/pexels-cdc-3992931.jpg",
+                           cardButtonText="View",
+                           cardLink="https://www.delta.com/us/en/travel-planning-center/coronavirus-faqs",
+                           cardImage="./assets/Delta.jpg",
                            cardSubtitle="Photo by CDC from Pexels")
             ], align="center", width=4),
             dbc.Col(children=[
                 createCard(cardTitle="Spirit Airlines", cardText="Covid-19 Procedures",
-                           cardButtonText="Button",
-                           cardLink="/data_view6",
-                           cardImage="./assets/pexels-august-de-richelieu-4261252.jpg",
-                           cardSubtitle="Photo by August de Richelieu from Pexels")
+                           cardButtonText="View",
+                           cardLink="https://www.spirit.com/notices",
+                           cardImage="./assets/Spirit.jpg",
+                           cardSubtitle="Photo from Spirit")
             ], align="center", width=4)
         ], justify="around", style={"padding-bottom": "1rem"})
     ])
