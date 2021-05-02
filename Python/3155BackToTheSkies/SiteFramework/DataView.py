@@ -12,99 +12,86 @@ app = dash.Dash(name=__name__, external_stylesheets=external_stylesheets)
 app.layout1 = html.Div(children=[
     header.getHeader(),
     dbc.Row(children=[
-        dbc.Col(children=[
-            html.P(
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut "
-                "labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra "
-                "maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-                "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
-        ], width=4),
-        dbc.Col(children=[
-            dcc.Graph(figure=chm.bar1_most_vax())
-        ]),
+        dcc.Graph(figure=chm.bar1_most_vax())
+    ], justify="center", style={"padding-bottom": "5%"}),
+    dbc.Row(children=[
+        html.P(
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut "
+            "labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra "
+            "maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
+            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
     ])
 ], className="container-xl", )
 
 app.layout2 = html.Div(children=[
     header.getHeader(),
     dbc.Row(children=[
-        dbc.Col(children=[
-            html.P(
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut "
-                "labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra "
-                "maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-                "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
-        ], width=4),
-        dbc.Col(children=[
-            dcc.Graph(figure=chm.bar2_least_vax())
-        ]),
+        dcc.Graph(figure=chm.bar2_least_vax())
+    ], justify="center", style={"padding-bottom": "5%"}),
+    dbc.Row(children=[
+        html.P(
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut "
+            "labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra "
+            "maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
+            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
     ])
 ], className="container-xl", )
 
 app.layout3 = html.Div(children=[
     header.getHeader(),
     dbc.Row(children=[
-        dbc.Col(children=[
-            html.P(
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut "
-                "labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra "
-                "maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-                "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
-        ], width=4),
-        dbc.Col(children=[
-            dcc.Graph(figure=chm.sbar1_most_bizz())
-        ]),
+        dcc.Graph(figure=chm.sbar1_most_bizz())
+    ], justify="center", style={"padding-bottom": "5%"}),
+    dbc.Row(children=[
+        html.P(
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut "
+            "labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra "
+            "maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
+            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
     ])
 ], className="container-xl", )
 
 app.layout4 = html.Div(children=[
     header.getHeader(),
     dbc.Row(children=[
-        dbc.Col(children=[
-            html.P(
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut "
-                "labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra "
-                "maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-                "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
-        ], width=4),
-        dbc.Col(children=[
-            dcc.Graph(figure=chm.sbar2_most_tour())
-        ]),
+        dcc.Graph(figure=chm.sbar2_most_tour())
+    ], justify="center", style={"padding-bottom": "5%"}),
+    dbc.Row(children=[
+        html.P(
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut "
+            "labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra "
+            "maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
+            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
     ])
 ], className="container-xl", )
 
 app.layout5 = html.Div(children=[
     header.getHeader(),
     dbc.Row(children=[
-        dbc.Col(children=[
-            html.P(
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut "
-                "labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra "
-                "maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-                "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
-        ], width=4),
-        dbc.Col(children=[
-            dcc.Graph(figure=chm.choropleth1_USA())
-        ]),
+        dcc.Graph(figure=chm.choropleth1_USA())
+    ], justify="center", style={"padding-bottom": "5%"}),
+    dbc.Row(children=[
+        html.P(
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut "
+            "labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra "
+            "maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
+            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
     ])
 ], className="container-xl", )
 
 app.layout6 = html.Div(children=[
     header.getHeader(),
     dbc.Row(children=[
-        dbc.Col(children=[
-            html.P(
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut "
-                "labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra "
-                "maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-                "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
-        ], width=4),
-        dbc.Col(children=[
-            dcc.Graph(figure=chm.choropleth1_USA())
-        ]),
+        dcc.Graph(figure=chm.choropleth1_USA())
+    ], justify="center", style={"padding-bottom": "5%"}),
+    dbc.Row(children=[
+        html.P(
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut "
+            "labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra "
+            "maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
+            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
     ])
 ], className="container-xl", )
-
 
 
 def getLayout1():
