@@ -21,7 +21,7 @@ app.layout1 = html.Div(children=[
         ], style={"width": "1"}),
         dbc.Col(children=[
             dcc.Graph(figure=chm.bar1_most_vax())
-        ], style={"background-color": "#000000", }),
+        ]),
     ])
 ], className="container-xl", )
 
@@ -37,7 +37,7 @@ app.layout2 = html.Div(children=[
         ], style={"width": "1"}),
         dbc.Col(children=[
             dcc.Graph(figure=chm.bar2_least_vax())
-        ], style={"background-color": "#000000", }),
+        ]),
     ])
 ], className="container-xl", )
 
@@ -53,7 +53,7 @@ app.layout3 = html.Div(children=[
         ], style={"width": "1"}),
         dbc.Col(children=[
             dcc.Graph(figure=chm.sbar1_most_bizz())
-        ], style={"background-color": "#000000", }),
+        ]),
     ])
 ], className="container-xl", )
 
@@ -69,7 +69,7 @@ app.layout4 = html.Div(children=[
         ], style={"width": "1"}),
         dbc.Col(children=[
             dcc.Graph(figure=chm.sbar2_most_tour())
-        ], style={"background-color": "#000000", }),
+        ]),
     ])
 ], className="container-xl", )
 
@@ -85,7 +85,7 @@ app.layout5 = html.Div(children=[
         ], style={"width": "1"}),
         dbc.Col(children=[
             dcc.Graph(figure=chm.choropleth1_USA())
-        ], style={"background-color": "#000000", }),
+        ]),
     ])
 ], className="container-xl", )
 
@@ -101,7 +101,7 @@ app.layout6 = html.Div(children=[
         ], style={"width": "1"}),
         dbc.Col(children=[
             dcc.Graph(figure=chm.choropleth1_USA())
-        ], style={"background-color": "#000000", }),
+        ]),
     ])
 ], className="container-xl", )
 
