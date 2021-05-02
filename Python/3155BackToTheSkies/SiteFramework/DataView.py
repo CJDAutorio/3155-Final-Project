@@ -52,10 +52,24 @@ app.layout4 = html.Div(children=[
     ], justify="center", style={"padding-bottom": "5%"}),
     dbc.Row(children=[
         html.P(
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut "
-            "labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra "
-            "maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+            "The list of places that’s welcoming vaccinated people is growing by the week."),
+        html.P(
+            "Proof of vaccines is easing travel restrictions to some places, and is the only way travelers can gain "
+            "entrance to others."),
+        html.P(
+            "Yet from health forms to testing protocols, travel remains complicated even for the immunized. Rules "
+            "differ from one country to the next. Some places reject certain types of vaccines, while "
+            "others still require a quarantine period — often shortened."),
+        html.P(
+            "Travelers almost always have to be fully"
+            " vaccinated — which is commonly defined as two weeks following the last required dose. However, several "
+            "places allow travel the same day as a second shot."),
+        html.P("So travelers should read the fine print before "
+               "booking a trip abroad, which includes understanding Covid-19 protocols that may be stricter than "
+               "what’s "
+               "required at home."),
+        html.Hr(),
+        html.Hr()
     ])
 ], className="container-xl", )
 
@@ -73,11 +87,10 @@ app.layout5 = html.Div(children=[
             "Resumption "
             "of the J&J vaccine is seen as a key component of vaccine delivery because it requires only one dose "
             "instead "
-            "of two.\nLack of demand may also be contributing to the vaccine slowdown as adults who most want the shot "
+            "of two. Lack of demand may also be contributing to the vaccine slowdown as adults who most want the shot "
             " have received it so the campaign must now reach out to more hesitant people.")
     ])
 ], className="container-xl", )
-
 
 
 def getLayout1():
@@ -98,7 +111,6 @@ def getLayout4():
 
 def getLayout5():
     return app.layout5
-
 
 
 # add callback for toggling the collapse on small screens
