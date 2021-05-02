@@ -16,10 +16,8 @@ app.layout1 = html.Div(children=[
     ], justify="center", style={"padding-bottom": "5%"}),
     dbc.Row(children=[
         html.P(
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut "
-            "labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra "
-            "maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+            "   The bar chart shown above displays the top 10 countries with the highest vaccination rate per capita around the world. "
+            "Thus, with this data these countries can be considered some of the safest countries to travel to during this pandemic. " )
     ])
 ], className="container-xl", )
 
@@ -30,10 +28,8 @@ app.layout2 = html.Div(children=[
     ], justify="center", style={"padding-bottom": "5%"}),
     dbc.Row(children=[
         html.P(
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut "
-            "labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra "
-            "maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+            "The bar chart shown above displays the top 10 countries with the lowest vaccination rate per capita around the world. "
+            "Thus, with this data these countries can be considered some of the worst and most dangerous countries to travel to during this pandemic. " )
     ])
 ], className="container-xl", )
 
@@ -44,10 +40,8 @@ app.layout3 = html.Div(children=[
     ], justify="center", style={"padding-bottom": "5%"}),
     dbc.Row(children=[
         html.P(
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut "
-            "labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra "
-            "maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+            "The stacked bar chart shown above displays how much of a population is completely unvaccinated, partially vaccinated, or fully vaccinated"
+            "within the top 10 most traveled to business locations of the world.")
     ])
 ], className="container-xl", )
 
