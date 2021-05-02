@@ -11,15 +11,16 @@ app = dash.Dash(name=__name__, external_stylesheets=external_stylesheets)
 
 # card layout used for each data element on page
 def createCard(cardTitle, cardText, cardButtonText, cardWidth="3", cardImage="https://via.placeholder.com/69",
-               cardColor="primary", cardLink="#"):
+               cardColor="primary", cardLink="#", cardSubtitle="Placeholder"):
     card = dbc.Card(children=[
         dbc.CardImg(src=cardImage, top=True),
+        html.P(cardSubtitle, style={"font-size": "10px"}),
         dbc.CardBody([
             html.H4(cardTitle, className="card-title"),
             html.P(cardText, className="card-text"),
             dbc.Button(cardButtonText, color=cardColor, style={"font-family": "'Inconsolata', monospace"},
                        href=cardLink)
-        ])
+        ], style={"padding-top": "-10px"})
     ], style={"width": cardWidth})
     return card
 
@@ -34,34 +35,46 @@ app.layout = html.Div(children=[
                 createCard(cardTitle="Top Countries by Vaccinations per Capita", cardText="The safest places to vist "
                                                                                           "in the world...",
                            cardButtonText="Button",
-                           cardLink="/data_view1")
+                           cardLink="/data_view1",
+                           cardImage="./assets/pexels-karolina-grabowska-4047186.jpg",
+                           cardSubtitle="Photo by Karolina Grabowska from Pexels")
             ], align="center", width=4),
             dbc.Col(children=[
                 createCard(cardTitle="Worst Countries by Vaccinations per Capita",
-                           cardText="Is it time to cancel your ticket!!??", cardButtonText="Button",
-                           cardLink="/data_view2")
+                           cardText="Is it time to cancel your ticket?", cardButtonText="Button",
+                           cardLink="/data_view2",
+                           cardImage="./assets/pexels-pavel-danilyuk.jpg",
+                           cardSubtitle="Photo by Pavel Danilyuk from Pexels")
             ], align="center", width=4),
             dbc.Col(children=[
                 createCard(cardTitle="Vaccination Data on Top Business Locations",
                            cardText="Is it safe to do business overseas?", cardButtonText="Button",
-                           cardLink="/data_view3")
+                           cardLink="/data_view3",
+                           cardImage="./assets/pexels-edmond-dantès-4342493.jpg",
+                           cardSubtitle="Photo by Edmond Dantès from Pexels"),
             ], align="center", width=4)
         ], justify="around", style={"padding-bottom": "1rem"}),
         dbc.Row(children=[
             dbc.Col(children=[
                 createCard(cardTitle="Vaccination Data on Top Vacation Locations",
-                           cardText="Its time to take the family back out!", cardButtonText="Button",
-                           cardLink="/data_view4")
+                           cardText="It's time to take the family back out!", cardButtonText="Button",
+                           cardLink="/data_view4",
+                           cardImage="./assets/pexels-jaxson-bryden-2040627.jpg",
+                           cardSubtitle="Photo by Jaxson Bryden from Pexels")
             ], align="center", width=4),
             dbc.Col(children=[
-                createCard(cardTitle="Vaccine Allocation by State", cardText="Where in the usa is it the safest?",
+                createCard(cardTitle="Vaccine Allocation by State", cardText="Where in the USA is it the safest?",
                            cardButtonText="Button",
-                           cardLink="/data_view5")
+                           cardLink="/data_view5",
+                           cardImage="./assets/pexels-cdc-3992931.jpg",
+                           cardSubtitle="Photo by CDC from Pexels")
             ], align="center", width=4),
             dbc.Col(children=[
                 createCard(cardTitle="COVID-19 Procedures", cardText="How we are keeping you safe in the skies!",
                            cardButtonText="Button",
-                           cardLink="/data_view6")
+                           cardLink="/data_view6",
+                           cardImage="./assets/pexels-august-de-richelieu-4261252.jpg",
+                           cardSubtitle="Photo by August de Richelieu from Pexels")
             ], align="center", width=4)
         ], justify="around", style={"padding-bottom": "1rem"})
     ])
