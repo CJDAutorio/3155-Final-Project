@@ -60,10 +60,12 @@ app.layout = html.Div(children=[
     ], style={"padding-bottom": "3rem"}),
     dbc.Row(children=[
         html.P(
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut "
-            "labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra "
-            "maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
+            "The Centers for Disease Control and Prevention said on Saturday about 146.2 million people have"
+            " received at least one dose of a Covid-19 vaccine, including about 103.4 million people who have been"
+            " fully vaccinated by Johnson & Johnson’s single-dose vaccine or the two-dose series made by "
+            "Pfizer-BioNTech and Moderna.\n"
+            "Providers are administering about 2.55 million doses per day on average, about a 25 percent decrease"
+            "from the peak of 3.38 million reported on April 13.)")
     ])
 ], className="container-xl", )
 
